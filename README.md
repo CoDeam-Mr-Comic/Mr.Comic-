@@ -2,12 +2,12 @@
 
 ## Team Name : CoDeam 
 ### Members  : 
-            1.Lina Al-mashaikh (team leader)==> Game Page 
-            2.Mohammad Khamees ==> Home page 
-            3.Bisher Nobani ==> Description Page 
-            4.Jameela Othman ==> Home Page 
-            5.Faten Samman(documentaion)==> About us / Logo 
-            6.Ali Mohammad ==> Voting Page 
+            1.Lina Al-mashaikh
+            2.Mohammad Khamees
+            3.Bisher Nobani
+            4.Jameela Othman
+            5.Faten Samman
+            6.Ali Mohammad
  
 ### Project Name : Mr. Comic 
 - This website is built for fun , take a pill and maybe to refresh your childhood memory, its for carton characters "Comic".
