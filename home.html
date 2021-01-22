@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Mr comic</title>
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="img/favicon.png">
+
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&family=Gorditas:wght@400;700&family=Potta+One&display=swap"
+            rel="stylesheet">
+        <!-- style -->
+        <link rel="stylesheet" href="css/home.css">
+
+        <script src="https://kit.fontawesome.com/a24ea374e8.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <!-- preloader -->
+        <div class="preloader">
+            <img src="img/preloader.gif" alt="preloader" class="preloader__item" />
+        </div>
+        <!-- header -->
+        <header class="hide">
+            <video controls muted autoplay loop class="video-container">
+                <source src="video/headerVideo.mp4" type="video/mp4" />
+            </video>
+            <div class="header-title">
+                <h1 class="slideLeft">Mr.Comic</h1>
+                <br />
+                <p class="slideRight">you don't need a superheros to be a superhero</p>
+            </div>
+            <nav class="nav-transparent">
+                <ul class="links">
+                    <li class="link-item-transparent"><a href="">Home</a></li>
+                    <li class="link-item-transparent"><a href="">voting</a></li>
+                    <li class="logo-container"><img src="img/logo.png" alt="logo" class="logo"></li>
+                    <li class="link-item-transparent"><a href="">game</a></li>
+                    <li class="link-item-transparent"><a href="">about us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="hide">
+            <div class="search">
+                <form>
+                    <input type="text" name="search" id="search" placeholder="your favotite Superhero">
+                </form>
+            </div>
+            <div class="card-container">
+            </div>
+            <button class="more">Show more</button>
+        </main>
+        <footer class="hide">
+            <ul class="footer-links">
+                <li class="footer-link"><a href=""><i class="fab fa-facebook-square"></i></a></li>
+                <li class="footer-link"><a href=""><i class="fab fa-instagram"></i></a></li>
+                <li class="footer-link"><a href=""><i class="fas fa-mask"></i></a></li>
+            </ul>
+            <h2>All rights reserved &copy; 2021 Mr.Comic </h2>
+        </footer>
+        <!-- javascript -->
+        <script type="module" src="js/home.js">
+        </script>
+    </body>
+
+</html>
