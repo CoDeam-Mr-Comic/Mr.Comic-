@@ -50,7 +50,7 @@ ul {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: var(--clr-white);
+	background: var(--forthColor);
 	display: grid;
 	justify-content: center;
 	align-items: center;
@@ -63,7 +63,7 @@ ul {
 	visibility: hidden;
 }
 
-/* end ofpreloader */
+/* end of preloader */
 
 /* header */
 header {
