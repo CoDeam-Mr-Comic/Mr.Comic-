@@ -1,4 +1,4 @@
-export const superhero = [
+export let superhero = [
 	{
 		id: 1,
 		name: 'Batman',
@@ -8,10 +8,11 @@ export const superhero = [
 		gender: 'male',
 		personality: 'good',
 		power: 'high tech gear, martial arts, and high intelligence',
+		vote: 0,
 	},
 	{
 		id: 2,
-		name: 'Wonder Woman',
+		name: 'Wonder-Woman',
 		src: 'img/wonderWomen.jpg',
 		bio:
 			'Top has to be the one and only Wonder Woman.  Those born in the early 70’s will remember the iconic imprint left on them thanks to Lynda Carter as Wonder Woman.  She proved the world would be a better place if run by women.  She was created in the early 1940s at a time when comics were dominated by superpower-endowed male characters. Wonder Woman was invented by William Moulton Marston, an American Psychologist/ Inventor / Writer.  He invented the first prototype of the lie detector interestingly. It is thought it was his wife who gave him the idea of a woman superhero. William pitched the idea to Max Gaines, co-founder with Jack Liebowitz of All-American Publications and Wonder Woman was born.  All American Publications went on to become DC Comics.',
@@ -19,6 +20,7 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'strength, speed, and agility. She can fly and is trained in hand-to-hand combat. She also had the ability to talk to animals.',
+		vote: 0,
 	},
 	{
 		id: 3,
@@ -29,6 +31,7 @@ export const superhero = [
 		gender: 'male',
 		personality: 'good',
 		power: 'flight, superhuman strength, x-ray vision',
+		vote: 0,
 	},
 	{
 		id: 4,
@@ -40,6 +43,7 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'flight, proportionally superhuman strength, and the ability to project bio-electrical stings.',
+		vote: 0,
 	},
 	{
 		id: 5,
@@ -50,6 +54,7 @@ export const superhero = [
 		gender: 'male',
 		personality: 'good',
 		power: 'spider-sense, superhuman strength, perfect balance and equilibrium',
+		vote: 0,
 	},
 	{
 		id: 6,
@@ -61,10 +66,11 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'control all forms of weather over vast areas. She has been able to control both Earthly and extraterrestrial ecosystems.',
+		vote: 0,
 	},
 	{
 		id: 7,
-		name: 'Iron Man',
+		name: 'Iron-Man',
 		src: 'img/IronMan.jpg',
 		bio:
 			'While he wasn’t the favourite superhero in comic book terms, thanks to Robert Downey Jr.’s performances he has become one of the standout Avengers superheroes. It’s hard not to be won over by the handsome and over-confident Tony Stark, who always manages to live up to his ego – not matter how large it may become',
@@ -72,6 +78,7 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'Genius level intellect Proficient scientist and engineer Powered armor suit',
+		vote: 0,
 	},
 	{
 		id: 8,
@@ -83,20 +90,22 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'uperhuman strength and reflexes, enhanced senses and tracking abilities, and a special healing power that also slows his aging.',
+		vote: 0,
 	},
 	{
 		id: 9,
-		name: 'Jean Grey',
+		name: 'Jean-Grey',
 		src: 'img/JeanGrey.jpg',
 		bio:
 			'The first Marvel Girl or now X-Woman Jean Grey pretty much represents the whole X-Men franchise.  She has been known under the aliases Marvel Girl, Phoenix, and Dark Phoenix.  Jean Grey is a mutant with powerful telekinetic and telepathic abilities. She studied at Xavier’s School for Gifted Youngsters and trained as a second-generation member of the X-Men under the tutelage of Professor X. She first appeared in The X-Men Comic Books in March 1964. Most recently the popular actress Sophie Turner (star from Game of Thrones) portrayed Jean Grey in the film X-Men: Apocalypse and X-Men: Dark Phoenix in 2019.  You can never keep Jean down as like a phoenix she always rises from the ashes.',
 		gender: 'female',
 		personality: 'good',
 		power: 'telepathy and telekinesis',
+		vote: 0,
 	},
 	{
 		id: 10,
-		name: 'Captain America',
+		name: 'Captain-America',
 		src: 'img/CaptainAmerica.jpg',
 		bio:
 			'As America answered the call to enter the Second World War, Marvel created what would go on to become one of their most iconic characters. Captain America was a supersoldier who fought against the Nazis and their supporters during the wartime period. During the ‘40s and ‘50s he grew to become an all-American hero for kids to look up to as the country’s’ economic wealth continued to grow, and decades later Chris Evans was perfectly cast as the square-jawed, blue-eyed hunk in the Marvel Universe.',
@@ -104,10 +113,11 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'agility, strength, speed, endurance, and reaction time superior to any Olympic athlete who ever competed. The Super-Soldier formula that he has metabolized has enhanced all of his bodily functions to the peak of human efficiency.',
+		vote: 0,
 	},
 	{
 		id: 11,
-		name: 'Scarlet Witch',
+		name: 'Scarlet-Witch',
 		src: 'img/ScarletWitch.jpg',
 		bio:
 			'Scarlet Witch is another fictional female superhero who first appeared in the American Marvel Comic books.  This diva woman superhero is one of the most dangerous heroes in the Marvel world.  The character was created by writer Stan Lee and artist Jack Kirby.  She first appeared in The X-Men Comic Books in March 1964. The character has appeared in a number of animated films and  television series. Elizabeth Olsen will reprise the role in the upcoming Disney series WandaVision (2020) and the film Doctor Strange in the Multiverse of Madness (2021).',
@@ -115,10 +125,11 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'superhuman ability to manipulate chaos magic, given to her by the demon Chthon',
+		vote: 0,
 	},
 	{
 		id: 12,
-		name: 'The Hulk',
+		name: 'The-Hulk',
 		src: 'img/TheHulk.jpg',
 		bio:
 			'Everyone has a green monster lurking inside that comes out when they get angry and The Hulk represents that perfectly. Although, we’re probably not as insanely strong or destructive as this green giant.  He first came to life in comic books in 1962 and has been played by countless actors over the years on both TV and film. The Hulk and The Incredible Hulk were released in 2003 and 2008 respectively, although are not remembered too fondly by fans.',
@@ -126,10 +137,11 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'ncredible superhuman strength, durability, and healing factor. Becomes more powerful as anger increases.',
+		vote: 0,
 	},
 	{
 		id: 13,
-		name: 'Black Widow',
+		name: 'Black-Widow',
 		src: 'img/BlackWidow.jpg',
 		bio:
 			'Black Widow has been around as a character since the 60s, but it is only recently that she is become a particularly prominent heroine in the Marvel Universe, thanks in large part to her role as a founding member of the cinematic Avengers.',
@@ -137,6 +149,7 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'Master in the covert arts of espionage, infiltration & subterfuge. Expert martial artist, with exceptional agility & athletic ability. Utilizes advanced weaponry including custom stun batons & "Widow"s Bite" bracelets capable of stunning enemies with electrical discharges.',
+		vote: 0,
 	},
 	{
 		id: 14,
@@ -148,10 +161,11 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'Superhuman strength, speed, endurance & resistance to injury, Member of the otherworldly & virtually immortal Asgardian race, Wields the enchanted Uru-forged hammer Mjolnir, which grants mastery over the elements of thunder & lightning, as well as the ability to fly & open interdimensional gateways.',
+		vote: 0,
 	},
 	{
 		id: 15,
-		name: 'Captain Marvel',
+		name: 'Captain-Marvel',
 		src: 'img/CaptainMarvel.jpg',
 		bio:
 			'Carol Danvers is just about the most powerful woman in the Marvel Universe, and is arguably the publisher is top female hero. With cosmic powers, a background as a fighter pilot, a high profile movie, and that crucial Avengers membership, she is everything great about superheroes wrapped up in one sleek package.It"s no wonder the next phase of the Marvel Cinematic Universe will likely put Carol front and center, as one of the pillars of the most popular superhero brand in the world.',
@@ -159,10 +173,11 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'superhuman strength, stamina, durability, and agility. Captain Marvel can also fly at great speeds, well beyond the sound barrier.',
+		vote: 0,
 	},
 	{
 		id: 16,
-		name: 'The Flash',
+		name: 'The-Flash',
 		src: 'img/TheFlash.jfif',
 		bio:
 			'The Flash is one of the oldest on this list, with his origins dating back to 1940 (when he was simply called Flash). While he’s always been very popular in the comic books, it has taken decades for him to transfer to the big screen. There have been plenty of cartoons over the years and The Flash TV series on Netflix ran for 5 seasons which pleased his many fans.',
@@ -170,11 +185,12 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'"super speed", which includes the ability to run, move, and think extremely fast, use superhuman reflexes, and seemingly violate certain laws of physics.',
+		vote: 0,
 	},
 
 	{
 		id: 17,
-		name: 'Invisible Woman',
+		name: 'Invisible-Woman',
 		src: 'img/InvisibleWoman.jpg',
 		bio:
 			'Marvel"s first superheroine may not have the highest profile of the characters on this list, but Sue Storm set the pace for modern female heroes – and still occupies a fairly unique place in comic books.',
@@ -182,6 +198,7 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'invisibility and force fields. Her invisibility power deals with bending light waves and allows her to render herself and other objects invisible.',
+		vote: 0,
 	},
 	{
 		id: 18,
@@ -193,6 +210,7 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'Accelerated Healing Factor, Extended longevity, Immunity to telepathy, teleportation (aided by machine), holographic disguise (aided by machine), Superhuman stamina, agility, flexibility and reflexes, may or may not be aware of the world beyond the fourth wall (IE, might know he is fictional)',
+		vote: 0,
 	},
 	{
 		id: 19,
@@ -204,5 +222,6 @@ export const superhero = [
 		personality: 'good',
 		power:
 			'Photographic memory; utility belt which contains battarang (bat boomerang), tear gas pellets, bola, smoke bombs, mini-binoculars, swingline with grapple; utility pocket book which has other helpful aids. She also has keen athletic and acrobatic skills.',
+		vote: 0,
 	},
 ];

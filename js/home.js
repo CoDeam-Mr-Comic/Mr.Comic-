@@ -1,5 +1,11 @@
 import { superhero } from './superheroData.js';
 
+//local storage
+if (!localStorage.getItem('superhero')) {
+	localStorage.setItem('superhero', JSON.stringify(superhero));
+}
+const favorite = JSON.parse(localStorage.getItem('superhero')) || [];
+
 // preloader
 const preloader = document.querySelector('.preloader');
 const showElement = document.querySelectorAll('.hide');
@@ -22,7 +28,6 @@ window.addEventListener('scroll', function () {
 	if (scrollHeight > navHeight) {
 		navbar.classList.add('nav-white');
 		navbar.classList.remove('nav-transparent');
-		linkItems[0].classList.add('active');
 		linkItems.forEach((linkItem) => {
 			linkItem.classList.remove('link-item-transparent');
 			linkItem.classList.add('link-item');
@@ -30,7 +35,6 @@ window.addEventListener('scroll', function () {
 	} else {
 		navbar.classList.remove('nav-white');
 		navbar.classList.add('nav-transparent');
-		linkItems[0].classList.remove('active');
 		linkItems.forEach((linkItem) => {
 			linkItem.classList.add('link-item-transparent');
 			linkItem.classList.remove('link-item');
@@ -47,12 +51,10 @@ const search = document.getElementById('search');
 let choosenHero;
 
 function findHero(heroName) {
-	console.log(heroName);
 	if (heroName) {
-		const theHero = superhero.filter((hero) => {
+		const theHero = favorite.filter((hero) => {
 			return hero.name.toLowerCase().includes(heroName.toLowerCase());
 		});
-		console.log(theHero);
 		return theHero;
 	} else {
 		return [];
@@ -63,17 +65,14 @@ form.addEventListener('keyup', (e) => {
 	e.preventDefault();
 	choosenHero = findHero(search.value);
 	if (!(choosenHero.length === 0)) {
+		document.querySelector('.more').classList.add('hide');
 		cardContainer.innerHTML = '';
 		for (let index = 0; index < choosenHero.length; index++) {
 			cardContainer.innerHTML += `<div class="single-card">
 							<img src=${choosenHero[index].src} alt=${choosenHero[index].name}
 								class="card-img">
-							<button class="btn-vote" data-id=${
-								index + 1
-							}><i class="far fa-heart"></i></button>
-							<button class="btn-vote-full hide-btn" data-id=${
-								index + 1
-							}><i class="fas fa-heart"></i></button>
+							<button class="btn-vote" data-id=${choosenHero[index].name}><i class="far fa-heart"></i></button>
+							<button class="btn-vote-full hide-btn" data-id=${choosenHero[index].name}><i class="fas fa-heart"></i></button>
 							<h3 class="card-title">${choosenHero[index].name}</h3>
 						</div>`;
 		}
@@ -84,10 +83,20 @@ form.addEventListener('keyup', (e) => {
 			btn.addEventListener('click', (e) => {
 				e.preventDefault();
 				const element = e.currentTarget.dataset.id;
+				const targetHero = favorite.find((hero) => {
+					return hero.name === element;
+				});
+				const index = choosenHero.indexOf(targetHero);
+
+				const modifiedHero = { ...targetHero };
+				modifiedHero.vote++;
+				favorite.splice(favorite.indexOf(targetHero), 1, modifiedHero);
+
 				if (btn.dataset.id == element) {
-					votefullBtns[element - 1].classList.remove('hide-btn');
+					votefullBtns[index].classList.remove('hide-btn');
 					btn.classList.add('hide-btn');
 				}
+				localStorage.setItem('superhero', JSON.stringify(favorite));
 			});
 		});
 
@@ -95,24 +104,39 @@ form.addEventListener('keyup', (e) => {
 			btn.addEventListener('click', (e) => {
 				e.preventDefault();
 				const element = e.currentTarget.dataset.id;
+				const targetHero = favorite.find((hero) => {
+					return hero.name === element;
+				});
+				const index = choosenHero.indexOf(targetHero);
+				console.log(index);
+
+				if (targetHero.vote >= 1) {
+					const modifiedHero = { ...targetHero };
+					modifiedHero.vote--;
+					favorite.splice(favorite.indexOf(targetHero), 1, modifiedHero);
+				}
+
 				if (btn.dataset.id == element) {
-					voteBtns[element - 1].classList.remove('hide-btn');
+					voteBtns[index].classList.remove('hide-btn');
 					btn.classList.add('hide-btn');
 				}
+				localStorage.setItem('superhero', JSON.stringify(favorite));
 			});
 		});
 	}
 	if (choosenHero.length === 0) {
 		if (search.value.length !== 0) {
-			cardContainer.innerHTML = `Sorry, doesn't match`;
+			cardContainer.innerHTML = `<p class='not-found'>Sorry, doesn't match any of our superhero names</p>`;
+			document.querySelector('.more').classList.add('hide');
 		} else {
+			document.querySelector('.more').classList.remove('hide');
 			cardContainer.innerHTML = '';
 			for (let index = 0; index < 6; index++) {
 				cardContainer.innerHTML += `<div class="single-card">
 							<img src=${superhero[index].src} alt=${superhero[index].name}
 								class="card-img">
-							<button class="btn-vote" data-id=${superhero[index].id}><i class="far fa-heart"></i></button>
-							<button class="btn-vote-full hide-btn" data-id=${superhero[index].id}><i class="fas fa-heart"></i></button>
+							<button class="btn-vote" data-id=${superhero[index].name}><i class="far fa-heart"></i></button>
+							<button class="btn-vote-full hide-btn" data-id=${superhero[index].name}><i class="fas fa-heart"></i></button>
 							<h3 class="card-title">${superhero[index].name}</h3>
 						</div>`;
 			}
@@ -126,8 +150,8 @@ for (let index = 0; index < 6; index++) {
 	cardContainer.innerHTML += `<div class="single-card">
 						<img src=${superhero[index].src} alt=${superhero[index].name}
 							class="card-img">
-						<button class="btn-vote" data-id=${superhero[index].id}><i class="far fa-heart"></i></button>
-						<button class="btn-vote-full hide-btn" data-id=${superhero[index].id}><i class="fas fa-heart"></i></button>
+						<button class="btn-vote" data-id=${superhero[index].name}><i class="far fa-heart"></i></button>
+						<button class="btn-vote-full hide-btn" data-id=${superhero[index].name}><i class="fas fa-heart"></i></button>
 						<h3 class="card-title">${superhero[index].name}</h3>
 					</div>`;
 }
@@ -142,23 +166,21 @@ const loadMore = () => {
 		cardContainer.innerHTML += `<div class="single-card">
                     <img src=${superhero[index].src} alt=${superhero[index].name}
                         class="card-img">
-                    <button class="btn-vote" data-id=${superhero[index].id}><i class="far fa-heart"></i></button>
-                    <button class="btn-vote-full hide-btn" data-id=${superhero[index].id}><i class="fas fa-heart"></i></button>
+                    <button class="btn-vote" data-id=${superhero[index].name}><i class="far fa-heart"></i></button>
+                    <button class="btn-vote-full hide-btn" data-id=${superhero[index].name}><i class="fas fa-heart"></i></button>
                     <h3 class="card-title">${superhero[index].name}</h3>
 				</div>`;
 	}
 	indexNum = cardNumbers;
-	cardNumbers += 6;
+	if (superhero.length - cardNumbers > 6) {
+		cardNumbers += 6;
+	} else {
+		cardNumbers += superhero.length - cardNumbers;
+	}
 	vote();
 };
 
-setInterval(() => {
-	if (cardNumbers > superhero.length) {
-		showMoreBtn.removeEventListener('click', loadMore, true);
-	} else {
-		showMoreBtn.addEventListener('click', loadMore, true);
-	}
-}, 100);
+showMoreBtn.addEventListener('click', loadMore);
 
 //add to favorite btn
 function vote() {
@@ -169,10 +191,19 @@ function vote() {
 		btn.addEventListener('click', (e) => {
 			e.preventDefault();
 			const element = e.currentTarget.dataset.id;
+			const targetHero = favorite.find((hero) => {
+				return hero.name === element;
+			});
+			const index = targetHero.id - 1;
+			const modifiedHero = { ...targetHero };
+			modifiedHero.vote++;
+			favorite.splice(favorite.indexOf(targetHero), 1, modifiedHero);
+
 			if (btn.dataset.id == element) {
-				votefullBtns[element - 1].classList.remove('hide-btn');
+				votefullBtns[index].classList.remove('hide-btn');
 				btn.classList.add('hide-btn');
 			}
+			localStorage.setItem('superhero', JSON.stringify(favorite));
 		});
 	});
 
@@ -180,10 +211,20 @@ function vote() {
 		btn.addEventListener('click', (e) => {
 			e.preventDefault();
 			const element = e.currentTarget.dataset.id;
+			const targetHero = favorite.find((hero) => {
+				return hero.name === element;
+			});
+			const index = targetHero.id - 1;
+			if (targetHero.vote > 1) {
+				const modifiedHero = { ...targetHero };
+				modifiedHero.vote--;
+				favorite.splice(favorite.indexOf(targetHero), 1, modifiedHero);
+			}
 			if (btn.dataset.id == element) {
-				voteBtns[element - 1].classList.remove('hide-btn');
+				voteBtns[index].classList.remove('hide-btn');
 				btn.classList.add('hide-btn');
 			}
+			localStorage.setItem('superhero', JSON.stringify(favorite));
 		});
 	});
 }
