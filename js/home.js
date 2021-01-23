@@ -91,6 +91,7 @@ form.addEventListener('keyup', (e) => {
 				const modifiedHero = { ...targetHero };
 				modifiedHero.vote++;
 				favorite.splice(favorite.indexOf(targetHero), 1, modifiedHero);
+				choosenHero.splice(choosenHero.indexOf(targetHero), 1, modifiedHero);
 
 				if (btn.dataset.id == element) {
 					votefullBtns[index].classList.remove('hide-btn');
@@ -108,7 +109,6 @@ form.addEventListener('keyup', (e) => {
 					return hero.name === element;
 				});
 				const index = choosenHero.indexOf(targetHero);
-				console.log(index);
 
 				if (targetHero.vote >= 1) {
 					const modifiedHero = { ...targetHero };
@@ -124,6 +124,7 @@ form.addEventListener('keyup', (e) => {
 			});
 		});
 	}
+
 	if (choosenHero.length === 0) {
 		if (search.value.length !== 0) {
 			cardContainer.innerHTML = `<p class='not-found'>Sorry, doesn't match any of our superhero names</p>`;
@@ -215,7 +216,7 @@ function vote() {
 				return hero.name === element;
 			});
 			const index = targetHero.id - 1;
-			if (targetHero.vote > 1) {
+			if (targetHero.vote >= 1) {
 				const modifiedHero = { ...targetHero };
 				modifiedHero.vote--;
 				favorite.splice(favorite.indexOf(targetHero), 1, modifiedHero);
