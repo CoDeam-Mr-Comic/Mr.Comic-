@@ -39,17 +39,97 @@ window.addEventListener('scroll', function () {
 });
 
 //main stuff
+const cardContainer = document.querySelector('.card-container');
+
+//search bar
+const form = document.querySelector('.form');
+const search = document.getElementById('search');
+let choosenHero;
+
+function findHero(heroName) {
+	console.log(heroName);
+	if (heroName) {
+		const theHero = superhero.filter((hero) => {
+			return hero.name.toLowerCase().includes(heroName.toLowerCase());
+		});
+		console.log(theHero);
+		return theHero;
+	} else {
+		return [];
+	}
+}
+
+form.addEventListener('keyup', (e) => {
+	e.preventDefault();
+	choosenHero = findHero(search.value);
+	if (!(choosenHero.length === 0)) {
+		cardContainer.innerHTML = '';
+		for (let index = 0; index < choosenHero.length; index++) {
+			cardContainer.innerHTML += `<div class="single-card">
+							<img src=${choosenHero[index].src} alt=${choosenHero[index].name}
+								class="card-img">
+							<button class="btn-vote" data-id=${
+								index + 1
+							}><i class="far fa-heart"></i></button>
+							<button class="btn-vote-full hide-btn" data-id=${
+								index + 1
+							}><i class="fas fa-heart"></i></button>
+							<h3 class="card-title">${choosenHero[index].name}</h3>
+						</div>`;
+		}
+		const voteBtns = document.querySelectorAll('.btn-vote');
+		const votefullBtns = document.querySelectorAll('.btn-vote-full');
+
+		voteBtns.forEach((btn) => {
+			btn.addEventListener('click', (e) => {
+				e.preventDefault();
+				const element = e.currentTarget.dataset.id;
+				if (btn.dataset.id == element) {
+					votefullBtns[element - 1].classList.remove('hide-btn');
+					btn.classList.add('hide-btn');
+				}
+			});
+		});
+
+		votefullBtns.forEach((btn) => {
+			btn.addEventListener('click', (e) => {
+				e.preventDefault();
+				const element = e.currentTarget.dataset.id;
+				if (btn.dataset.id == element) {
+					voteBtns[element - 1].classList.remove('hide-btn');
+					btn.classList.add('hide-btn');
+				}
+			});
+		});
+	}
+	if (choosenHero.length === 0) {
+		if (search.value.length !== 0) {
+			cardContainer.innerHTML = `Sorry, doesn't match`;
+		} else {
+			cardContainer.innerHTML = '';
+			for (let index = 0; index < 6; index++) {
+				cardContainer.innerHTML += `<div class="single-card">
+							<img src=${superhero[index].src} alt=${superhero[index].name}
+								class="card-img">
+							<button class="btn-vote" data-id=${superhero[index].id}><i class="far fa-heart"></i></button>
+							<button class="btn-vote-full hide-btn" data-id=${superhero[index].id}><i class="fas fa-heart"></i></button>
+							<h3 class="card-title">${superhero[index].name}</h3>
+						</div>`;
+			}
+			vote();
+		}
+	}
+});
 
 //cards of the superhero
-const cardContainer = document.querySelector('.card-container');
 for (let index = 0; index < 6; index++) {
 	cardContainer.innerHTML += `<div class="single-card">
-                    <img src=${superhero[index].src} alt=${superhero[index].name}
-                        class="card-img">
-                    <button class="btn-vote" data-id=${superhero[index].id}><i class="far fa-heart"></i></button>
-                    <button class="btn-vote-full hide-btn" data-id=${superhero[index].id}><i class="fas fa-heart"></i></button>
-                    <h3 class="card-title">${superhero[index].name}</h3>
-                </div>`;
+						<img src=${superhero[index].src} alt=${superhero[index].name}
+							class="card-img">
+						<button class="btn-vote" data-id=${superhero[index].id}><i class="far fa-heart"></i></button>
+						<button class="btn-vote-full hide-btn" data-id=${superhero[index].id}><i class="fas fa-heart"></i></button>
+						<h3 class="card-title">${superhero[index].name}</h3>
+					</div>`;
 }
 
 //show more btn
@@ -69,6 +149,7 @@ const loadMore = () => {
 	}
 	indexNum = cardNumbers;
 	cardNumbers += 6;
+	vote();
 };
 
 setInterval(() => {
@@ -80,27 +161,31 @@ setInterval(() => {
 }, 100);
 
 //add to favorite btn
-const voteBtns = document.querySelectorAll('.btn-vote');
-const votefullBtns = document.querySelectorAll('.btn-vote-full');
+function vote() {
+	const voteBtns = document.querySelectorAll('.btn-vote');
+	const votefullBtns = document.querySelectorAll('.btn-vote-full');
 
-voteBtns.forEach((btn) => {
-	btn.addEventListener('click', (e) => {
-		e.preventDefault();
-		const element = e.currentTarget.dataset.id;
-		if (btn.dataset.id == element) {
-			votefullBtns[element - 1].classList.remove('hide-btn');
-			btn.classList.add('hide-btn');
-		}
+	voteBtns.forEach((btn) => {
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			const element = e.currentTarget.dataset.id;
+			if (btn.dataset.id == element) {
+				votefullBtns[element - 1].classList.remove('hide-btn');
+				btn.classList.add('hide-btn');
+			}
+		});
 	});
-});
 
-votefullBtns.forEach((btn) => {
-	btn.addEventListener('click', (e) => {
-		e.preventDefault();
-		const element = e.currentTarget.dataset.id;
-		if (btn.dataset.id == element) {
-			voteBtns[element - 1].classList.remove('hide-btn');
-			btn.classList.add('hide-btn');
-		}
+	votefullBtns.forEach((btn) => {
+		btn.addEventListener('click', (e) => {
+			e.preventDefault();
+			const element = e.currentTarget.dataset.id;
+			if (btn.dataset.id == element) {
+				voteBtns[element - 1].classList.remove('hide-btn');
+				btn.classList.add('hide-btn');
+			}
+		});
 	});
-});
+}
+
+vote();

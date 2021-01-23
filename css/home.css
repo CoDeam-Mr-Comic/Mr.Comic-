@@ -131,23 +131,23 @@ header::after {
 }
 
 .link-item {
-	font-size: 1.3rem;
-	padding: 1rem 2rem;
+	font-size: 1.2rem;
+	padding: 1rem;
 	text-transform: capitalize;
 	transition: var(--mainTransition);
 	height: 115px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-weight: bold;
 }
 
 .link-item:hover {
 	background-color: var(--thirdColor);
-	padding: 1rem 2rem;
+	padding: 1rem;
 	border-bottom-left-radius: 1rem;
 	border-bottom-right-radius: 1rem;
 	cursor: pointer;
-	font-weight: bold;
 }
 
 .link-item:hover a {
@@ -161,7 +161,7 @@ header::after {
 
 .active {
 	background-color: rgb(39, 37, 37);
-	padding: 1rem 2rem;
+	padding: 1rem;
 	border-bottom-left-radius: 1rem;
 	border-bottom-right-radius: 1rem;
 	cursor: pointer;
@@ -198,7 +198,7 @@ header::after {
 }
 
 .link-item-transparent {
-	font-size: 2rem;
+	font-size: 1.5rem;
 	text-transform: capitalize;
 	transition: var(--mainTransition);
 	display: flex;
@@ -421,7 +421,7 @@ main {
 
 /* footer */
 footer {
-	height: 120px;
+	height: 130px;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -429,7 +429,7 @@ footer {
 	background-color: var(--darkColor);
 	color: var(--secondColor);
 	overflow: hidden;
-	padding: 1.5rem 0 1rem;
+	padding: 1.5rem 0;
 	margin-top: 5rem;
 }
 
