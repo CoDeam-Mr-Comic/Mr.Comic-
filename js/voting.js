@@ -1,5 +1,37 @@
 'use strict';
 
+
+
+
+
+//header stuff
+const navbar = document.querySelector('.nav-transparent');
+const linkItems = document.querySelectorAll('.link-item-transparent');
+
+window.addEventListener('scroll', function () {
+	const scrollHeight = window.pageYOffset;
+	const navHeight =100;
+
+	if (scrollHeight > navHeight) {
+		navbar.classList.add('nav-white');
+		navbar.classList.remove('nav-transparent');
+		linkItems.forEach((linkItem) => {
+			linkItem.classList.remove('link-item-transparent');
+			linkItem.classList.add('link-item');
+		});
+	} else {
+		navbar.classList.remove('nav-white');
+		navbar.classList.add('nav-transparent');
+		linkItems.forEach((linkItem) => {
+			linkItem.classList.add('link-item-transparent');
+			linkItem.classList.remove('link-item');
+		});
+	}
+});
+//////////////////////
+
+
+
 //data 
 import {superhero} from './superheroData.js'
 
@@ -11,7 +43,6 @@ if(localStorage.getItem('superhero')) {
     const votedhero = JSON.parse(localStorage.getItem('superhero')).filter((hero) => {
         return hero.vote >= 1;    
     });
-    console.log(votedhero);
     votedhero.forEach((hero) =>{
         superheroNames.push(hero.name)
     })
