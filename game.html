@@ -1,68 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <title> Wireframe </title>
-    <!-- <link rel="stylesheet" href="css/reset.css"> -->
-    <link rel="stylesheet" href="css/game.css">
-    <!-- font awesome -->
-    <script src="https://kit.fontawesome.com/a24ea374e8.js" crossorigin="anonymous"></script>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>The Game</title>
+        <!-- favicon -->
+        <link rel="icon" type="image/png" href="img/favicon.png">
 
-</head>
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&family=Gorditas:wght@400;700&family=Potta+One&display=swap"
+            rel="stylesheet">
+        <!-- style -->
+        <link rel="stylesheet" href="css/game.css">
 
-<body>
-    <header>
-        <nav class="nav-transparent">
-            <ul class="links">
-                <li class="link-item-transparent"><a href="home.html">Home</a></li>
-                <li class="link-item-transparent"><a href="voting.html">voting</a></li>
-                <li class="logo-container"><img src="img/logo.png" alt="logo" class="logo"></li>
-                <li class="link-item-transparent"><a href="game.html">game</a></li>
-                <li class="link-item-transparent"><a href="about.html">about us</a></li>
-            </ul>
-        </nav>
+        <!-- font awesome -->
+        <script src="https://kit.fontawesome.com/a24ea374e8.js" crossorigin="anonymous"></script>
+    </head>
 
-    </header>
-    <main>
-        
-        <!-- Start Quess Button   -->
-        <div class="start-btn"><button type="button"> Start the Game </button></div>
-
-        <!-- Guess the image -->
-        <div class="slider">
-            <h2>What do you think the gender of our hero  ?  </h3>
-            <button class="Previous">-</button>
-            <button class="next">+</button>
-        <div class="container">           
-                <div class="box">
-                    <div class="image-box">
-                        <img id="first-img" src="img/Superman.jpg" alt="First image">
+    <body>
+        <header>
+            <nav class="nav-white">
+                <ul class="links">
+                    <li class="link-item"><a href="home.html">Home</a></li>
+                    <li class="link-item"><a href="voting.html">voting</a></li>
+                    <li class="logo-container"><img src="img/logo.png" alt="logo" class="logo"></li>
+                    <li class="link-item"><a href="game.html">game</a></li>
+                    <li class="link-item"><a href="about.html">about us</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="content">
+                <div class="question-box">
+                    <div class="question">
+                        <h2>What do you think the gender of our hero  ?</h2>
                     </div>
-
-                    <div class="option">
-                        <h2>Male</h2>
+                    <div class="answers">
+                        <div class="answer-box">
+                            <img src="img/Batgirl.jpg" alt="">
+                            <p class="answer">yes</p>
+                        </div>
+                        <div class="answer-box">
+                            <img src="img/Batgirl.jpg" alt="">
+                            <p class="answer">yes</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="box">
-                    <div class="image-box">
-                        <img id="second-img" src="img/JeanGrey.jpg" alt="Second image">
-                    </div>
-                    <div class="option">
-                        <h2>Female</h2>
-                    </div>
-                
             </div>
-           
-            </div>
-
-        </div>
-
-    </main>
-
-    <footer>
-    </footer>
-    <!-- <script src="game.js"></script> -->
-</body>
+        </main>
+        <footer>
+            <ul class="footer-links">
+                <li class="footer-link"><a href="https://www.facebook.com/" target="_blank"><i
+                            class="fab fa-facebook-square"></i></a></li>
+                <li class="footer-link"><a href="https://www.instagram.com/" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                </li>
+                <li class="footer-link"><a href="https://www.marvel.com/comics" target="_blank"><i
+                            class="fas fa-mask"></i></a></li>
+            </ul>
+            <h2>All rights reserved &copy; 2021 Mr.Comic </h2>
+        </footer>
+        <script src="js/game.js"></script>
+    </body>
 
 </html>
