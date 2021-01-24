@@ -1,5 +1,39 @@
 'use strict';
 
+//data 
+import {superhero} from './superheroData.js'
+
+
+let superheroNames = [];
+let superheroVotes = [];
+
+if(localStorage.getItem('superhero')) {
+    const votedhero = JSON.parse(localStorage.getItem('superhero')).filter((hero) => {
+        return hero.vote >= 1;    
+    });
+    console.log(votedhero);
+    votedhero.forEach((hero) =>{
+        superheroNames.push(hero.name)
+    })
+} else {
+    superhero.forEach((hero) => {
+        superheroNames.push(hero.name)
+    });
+}
+
+if(localStorage.getItem('superhero')) {
+
+    JSON.parse(localStorage.getItem('superhero')).forEach((hero) => {
+        superheroVotes.push(hero.vote);
+    })
+} else {
+    superhero.forEach((hero) => {
+        superheroVotes.push(hero.vote)
+    });
+}
+
+
+
 ///////// chart /////////
 
 var ctx = document.getElementById('myChart').getContext('2d');
@@ -7,10 +41,10 @@ var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: superheroNames,
         datasets: [{
             label: 'Votes',
-            data: [12, 19, -3, 5, -2, 3],
+            data: superheroVotes,
             backgroundColor:
             function(context) {
                 var index = context.dataIndex;
@@ -58,35 +92,5 @@ var myChart = new Chart(ctx, {
 
 ////////////////////////////////////////////////////
 
-/////////////////// function  for chart /////////////////////////
-
-
-//////// function add new data ////////
-function addData(chart) {
-    chart.data.labels.push(document.getElementById("category").value);
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.push(document.getElementById("votes").value * 1);
-    });
-    chart.update();
-}
-//////////////////////////////////////
-
-/////// function remove data ////////
-function removeData(chart) {
-    chart.data.labels.pop();
-    chart.data.datasets.forEach((dataset) => {
-        dataset.data.pop();
-    });
-    chart.update();
-}
-////////////////////////////////////
-
-////// function +++ same data //////
-function myVote(chart){
-    let voteIndex = chart.data.labels.indexOf(document.getElementById('category').value);
-    chart.data.datasets[0].data[voteIndex] += 1;
-    chart.update();
-}
-////////////////////////////////////
 
 ////////////////////////////////////////////////////////
