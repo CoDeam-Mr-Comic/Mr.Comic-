@@ -1,0 +1,152 @@
+/* global style */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--mainTransition: all 0.3s ease-in-out;
+	--firstFont: 'Chakra Petch', sans-serif;
+	--secondFont: 'Gorditas', cursive;
+	--thirdFont: 'Potta One', cursive;
+	--mainColor: black;
+	--secondColor: white;
+	--thirdColor: gray;
+	--forthColor: rgb(187, 185, 185);
+	--fifthColor: rgb(216, 216, 216);
+	--darkColor: rgb(41, 40, 40);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: var(--firstFont);
+	background-color: var(--fifthColor);
+}
+
+a {
+	text-decoration: none;
+}
+
+ul {
+	list-style-type: none;
+}
+
+.hide {
+	display: none;
+}
+
+.hide-btn {
+	display: none;
+}
+
+/* header */
+
+.nav-white {
+	
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100px;
+	background-color: var(--secondColor);
+	transition: var(--mainTransition);
+	box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.64);
+}
+
+.links {
+	flex: 0 0 calc(40% - 1rem);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	list-style: none;
+}
+
+.link-item {
+	font-size: 1.2rem;
+	padding: 1rem;
+	text-transform: capitalize;
+	transition: var(--mainTransition);
+	height: 115px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: bold;
+}
+
+.link-item:hover {
+	background-color: var(--thirdColor);
+	padding: 1rem 1.5rem;
+	border-bottom-left-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	cursor: pointer;
+}
+
+.link-item:hover a {
+	color: var(--secondColor);
+}
+
+.link-item a {
+	color: var(--mainColor);
+	letter-spacing: 0.2rem;
+}
+
+.logo {
+	width: 100%;
+	height: 100%;
+}
+
+.logo-container {
+	width: 8rem;
+	height: 9rem;
+}
+
+
+
+
+
+/* end of header*/
+
+
+
+/* footer */
+footer {
+	height: 130px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: var(--darkColor);
+	color: var(--secondColor);
+	overflow: hidden;
+	padding: 1.5rem 0;
+	margin-top: 5rem;
+}
+
+.footer-links {
+	list-style: none;
+	width: 10%;
+	font-size: 2rem;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 1rem;
+}
+
+.footer-links a {
+	color: var(--secondColor);
+	transition: var(--mainTransition);
+}
+
+.footer-links a:hover {
+	color: var(--thirdColor);
+}
+
+footer h2 {
+	text-transform: capitalize;
+	letter-spacing: 0.2rem;
+}
+
+/* end of footer */
