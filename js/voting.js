@@ -33,9 +33,7 @@ if(localStorage.getItem('superhero')) {
 }
 
 
-// superhero.forEach((hero) => {
-//     superheroVotes.push(hero.vote);
-// })
+
 ///////// chart /////////
 
 var ctx = document.getElementById('myChart').getContext('2d');
@@ -94,35 +92,5 @@ var myChart = new Chart(ctx, {
 
 ////////////////////////////////////////////////////
 
-/////////////////// function  for chart /////////////////////////
-
-
-// //////// function add new data ////////
-// function addData(chart) {
-//     chart.data.labels.push(document.getElementById("category").value);
-//     chart.data.datasets.forEach((dataset) => {
-//         dataset.data.push(document.getElementById("votes").value * 1);
-//     });
-//     chart.update();
-// }
-// //////////////////////////////////////
-
-// /////// function remove data ////////
-// function removeData(chart) {
-//     chart.data.labels.pop();
-//     chart.data.datasets.forEach((dataset) => {
-//         dataset.data.pop();
-//     });
-//     chart.update();
-// }
-// ////////////////////////////////////
-
-// ////// function +++ same data //////
-// function myVote(chart){
-//     let voteIndex = chart.data.labels.indexOf(document.getElementById('category').value);
-//     chart.data.datasets[0].data[voteIndex] += 1;
-//     chart.update();
-// }
-////////////////////////////////////
 
 ////////////////////////////////////////////////////////
