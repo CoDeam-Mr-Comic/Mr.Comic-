@@ -13,3 +13,4 @@ window.addEventListener('DOMContentLoaded', () => {
                     <p>${choosenhero.bio} ${choosenhero.power}</p>
                 </div>`;
 });
+
