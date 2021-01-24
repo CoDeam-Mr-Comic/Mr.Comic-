@@ -48,7 +48,6 @@ const cardContainer = document.querySelector('.card-container');
 //search bar
 const form = document.querySelector('.form');
 const search = document.getElementById('search');
-let choosenHero;
 
 function findHero(heroName) {
 	if (heroName) {
@@ -63,19 +62,21 @@ function findHero(heroName) {
 
 form.addEventListener('keyup', (e) => {
 	e.preventDefault();
-	choosenHero = findHero(search.value);
+	const choosenHero = findHero(search.value);
 	if (!(choosenHero.length === 0)) {
 		document.querySelector('.more').classList.add('hide');
 		cardContainer.innerHTML = '';
 		for (let index = 0; index < choosenHero.length; index++) {
-			cardContainer.innerHTML += `<div class="single-card" data-id=${choosenHero[index].id}">
+			cardContainer.innerHTML += `<div class="single-card" >
 							<img src=${choosenHero[index].src} alt=${choosenHero[index].name}
-								class="card-img">
+								class="card-img" data-id=${choosenHero[index].id}>
 							<button class="btn-vote" data-id=${choosenHero[index].name}><i class="far fa-heart"></i></button>
 							<button class="btn-vote-full hide-btn" data-id=${choosenHero[index].name}><i class="fas fa-heart"></i></button>
 							<h3 class="card-title">${choosenHero[index].name}</h3>
 						</div>`;
 		}
+
+		description();
 
 		const voteBtns = document.querySelectorAll('.btn-vote');
 		const votefullBtns = document.querySelectorAll('.btn-vote-full');
@@ -126,7 +127,6 @@ form.addEventListener('keyup', (e) => {
 		});
 	}
 
-
 	if (choosenHero.length === 0) {
 		if (search.value.length !== 0) {
 			cardContainer.innerHTML = `<p class='not-found'>Sorry, doesn't match any of our superhero names</p>`;
@@ -135,9 +135,9 @@ form.addEventListener('keyup', (e) => {
 			document.querySelector('.more').classList.remove('hide');
 			cardContainer.innerHTML = '';
 			for (let index = 0; index < 6; index++) {
-				cardContainer.innerHTML += `<div class="single-card" data-id=${superhero[index].id}>
+				cardContainer.innerHTML += `<div class="single-card" >
 							<img src=${superhero[index].src} alt=${superhero[index].name}
-								class="card-img">
+								class="card-img" data-id=${superhero[index].id}>
 							<button class="btn-vote" data-id=${superhero[index].name}><i class="far fa-heart"></i></button>
 							<button class="btn-vote-full hide-btn" data-id=${superhero[index].name}><i class="fas fa-heart"></i></button>
 							<h3 class="card-title">${superhero[index].name}</h3>
@@ -151,9 +151,9 @@ form.addEventListener('keyup', (e) => {
 
 //cards of the superhero
 for (let index = 0; index < 6; index++) {
-	cardContainer.innerHTML += `<div class="single-card" data-id=${superhero[index].id}>
+	cardContainer.innerHTML += `<div class="single-card" >
 						<img src=${superhero[index].src} alt=${superhero[index].name}
-							class="card-img">
+							class="card-img" data-id=${superhero[index].id}>
 						<button class="btn-vote" data-id=${superhero[index].name}><i class="far fa-heart"></i></button>
 						<button class="btn-vote-full hide-btn" data-id=${superhero[index].name}><i class="fas fa-heart"></i></button>
 						<h3 class="card-title">${superhero[index].name}</h3>
@@ -167,9 +167,9 @@ let indexNum = 6;
 
 const loadMore = () => {
 	for (let index = indexNum; index < cardNumbers; index++) {
-		cardContainer.innerHTML += `<div  class="single-card" data-id=${superhero[index].id}>
+		cardContainer.innerHTML += `<div  class="single-card" >
                     <img src=${superhero[index].src} alt=${superhero[index].name}
-                        class="card-img">
+                        class="card-img" data-id=${superhero[index].id}>
                     <button class="btn-vote" data-id=${superhero[index].name}><i class="far fa-heart"></i></button>
                     <button class="btn-vote-full hide-btn" data-id=${superhero[index].name}><i class="fas fa-heart"></i></button>
                     <h3 class="card-title">${superhero[index].name}</h3>
@@ -237,7 +237,7 @@ function vote() {
 vote();
 
 const description = () => {
-	const singleCards = document.querySelectorAll('.single-card');
+	const singleCards = document.querySelectorAll('.card-img');
 	singleCards.forEach((singleCard) => {
 		singleCard.addEventListener('click', (e) => {
 			e.preventDefault();
