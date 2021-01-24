@@ -68,7 +68,7 @@ form.addEventListener('keyup', (e) => {
 		document.querySelector('.more').classList.add('hide');
 		cardContainer.innerHTML = '';
 		for (let index = 0; index < choosenHero.length; index++) {
-			cardContainer.innerHTML += `<div class="single-card">
+			cardContainer.innerHTML += `<div class="single-card data-id=${choosenHero[index].id}">
 							<img src=${choosenHero[index].src} alt=${choosenHero[index].name}
 								class="card-img">
 							<button class="btn-vote" data-id=${choosenHero[index].name}><i class="far fa-heart"></i></button>
@@ -133,7 +133,7 @@ form.addEventListener('keyup', (e) => {
 			document.querySelector('.more').classList.remove('hide');
 			cardContainer.innerHTML = '';
 			for (let index = 0; index < 6; index++) {
-				cardContainer.innerHTML += `<div class="single-card">
+				cardContainer.innerHTML += `<div class="single-card" data-id=${superhero[index].id}>
 							<img src=${superhero[index].src} alt=${superhero[index].name}
 								class="card-img">
 							<button class="btn-vote" data-id=${superhero[index].name}><i class="far fa-heart"></i></button>
@@ -148,7 +148,7 @@ form.addEventListener('keyup', (e) => {
 
 //cards of the superhero
 for (let index = 0; index < 6; index++) {
-	cardContainer.innerHTML += `<div class="single-card">
+	cardContainer.innerHTML += `<div class="single-card" data-id=${superhero[index].id}>
 						<img src=${superhero[index].src} alt=${superhero[index].name}
 							class="card-img">
 						<button class="btn-vote" data-id=${superhero[index].name}><i class="far fa-heart"></i></button>
@@ -231,3 +231,18 @@ function vote() {
 }
 
 vote();
+
+let singleCards;
+setInterval(() => {
+	singleCards = document.querySelectorAll('.single-card');
+	singleCards.forEach((singleCard) => {
+		singleCard.addEventListener('click', (e) => {
+			e.preventDefault();
+			const element = Number(e.currentTarget.dataset.id);
+			const card = superhero.find((hero) => {
+				return hero.id === element;
+			});
+			localStorage.setItem(`${card.name}`, JSON.stringify(card));
+		});
+	});
+}, 100);
