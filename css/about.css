@@ -283,6 +283,7 @@ header::after {
 }
 .pics {
 	margin-bottom: 40px;
+	display: flex;
 }
 .pics a {
 	display: inline-block;
@@ -292,13 +293,32 @@ header::after {
 	overflow: hidden;
 	border-radius: 50%;
 }
+h5 {
+color: var(--secondColor);
+	width: 150px;
+	visibility: hidden;
+	background-color: var(--mainColor);
+	opacity: 1;
+	border-radius: 4px;
+}
+.idd{
+	position: relative;
+}
+.idd:hover h5{
+position: absolute;
+top: 100%;
+left: 50%;
+z-index: 5;
+transform: translate(-50%,-50%);
+visibility: visible;
+}
 .pics a img {
 	width: 100%;
-	filter: grayscale(100%);
+	filter: none;
 	transition: 0.4s all;
 }
 .pics a:hover>img{
-	filter: none;
+	filter: grayscale(100%);
 }
 .info-section {
 	width: 900px;
@@ -329,6 +349,7 @@ header::after {
     width: 170px;
     margin:0px;
 }
+
 
 /* footer */
 footer {

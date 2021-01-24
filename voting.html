@@ -1,93 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- ////// css voting page link ///// -->
-    <link rel="stylesheet" href="voting.css">
-    <!-- ///////////////////////////////// -->
-    <link rel="stylesheet" href="../css/home.css">
-    <title>Document</title>
 
 
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- ////// css voting page link ///// -->
+        <link rel="stylesheet" href="css/voting.css">
+        <!-- ///////////////////////////////// -->
+        <!-- <link rel="stylesheet" href="css/home.css"> -->
+        <title>Voting</title>
 
 
-
-<body>
-    <header>
-
-<nav class="nav-transparent">
-    <ul class="links">
-        <li class="link-item-transparent"><a href="">Home</a></li>
-        <li class="link-item-transparent"><a href="">voting</a></li>
-        <li class="logo-container"><img src="img/logo.png" alt="logo" class="logo"></li>
-        <li class="link-item-transparent"><a href="">game</a></li>
-        <li class="link-item-transparent"><a href="">about us</a></li>
-    </ul>
-</nav>
-    </header>
-
-
-<main>
-
-<!-- ////////////////////// canvas id ///////////////////////////// -->
-    <canvas id="myChart"></canvas>
-<!-- ////////////////////// //////// ///////////////////////////// -->
+    </head>
 
 
 
-    <div>
-<!-- ////////////////////// -->
-        <label for="votes">votes:</label>
-        <input type="number" id="votes" name="votes">
-<!-- ////////////////////// -->
+    <body>
+        <header>
+            <!-- //////////////// bar nav ////////////// -->
+            <nav class="nav-transparent">
+                <ul class="links">
+                    <li class="link-item-transparent"><a href="home.html">Home</a></li>
+                    <li class="link-item-transparent"><a href="voting.html">voting</a></li>
+                    <li class="logo-container"><img src="img/logo.png" alt="logo" class="logo"></li>
+                    <li class="link-item-transparent"><a href="game.html">game</a></li>
+                    <li class="link-item-transparent"><a href="about.html">about us</a></li>
+                </ul>
+            </nav>
 
-<!-- ////////////////////// -->
-        <label for="category">category:</label>
-        <input type="text" id="category" name="category">
-<!-- ////////////////////// -->
-
-        
-<!-- ////////////////////// -->
-        <label for="vote">my vote:</label>
-        <input type="text" id="vote" name="vote">
-<!-- ////////////////////// -->
-
-    </div>
-
-<!-- ////////////////////// -->
-    <button onclick="addData(myChart)">Add Data</button>
-<!-- ////////////////////// -->
-    <button onclick="removeData(myChart)">Remove Data</button>
-<!-- ////////////////////// -->
-    <button onclick="myVote(myChart)">my vote</button>
-<!-- ////////////////////// -->
-
-</main>
+            <!-- /////////////////////////////////////// -->
 
 
-<footer>
-    <ul class="footer-links">
-        <li class="footer-link"><a href=""><i class="fab fa-facebook-square"></i></a></li>
-        <li class="footer-link"><a href=""><i class="fab fa-instagram"></i></a></li>
-        <li class="footer-link"><a href=""><i class="fas fa-mask"></i></a></li>
-    </ul>
-    <h2>All rights reserved &copy; 2021 Mr.Comic </h2>
-</footer>
+            <div class="slideshow">
+                <div class="slideshow-item">
+                    <img src="https://wallpapercave.com/wp/wp3979958.jpg" width="100%" alt="">
+                    <div class="slideshow-item-text">
+                        <h4>iron man</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid recusandae debitis a
+                            laboriosam voluptatum qui atque, ipsum facere inventore mollitia asperiores, harum dolor sit
+                            laudantium velit sunt voluptatem vitae obcaecati.</p>
+                    </div>
+                </div>
+                <div class="slideshow-item">
+                    <img src="https://images6.alphacoders.com/902/thumb-1920-902379.jpg" alt="">
+                    <div class="slideshow-item-text">
+                        <h4>iron man 2</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid recusandae debitis a
+                            laboriosam voluptatum qui atque, ipsum facere inventore mollitia asperiores, harum dolor sit
+                            laudantium velit sunt voluptatem vitae obcaecati.</p>
+                    </div>
+                </div>
+                <div class="slideshow-item">
+                    <img src="https://c4.wallpaperflare.com/wallpaper/591/844/1024/spider-man-spider-video-games-superhero-wallpaper-preview.jpg"
+                        alt="">
+                    <div class="slideshow-item-text">
+                        <h4>iron man 2</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid recusandae debitis a
+                            laboriosam voluptatum qui atque, ipsum facere inventore mollitia asperiores, harum dolor sit
+                            laudantium velit sunt voluptatem vitae obcaecati.</p>
+                    </div>
+                </div>
+
+            </div>
 
 
-<!-- //////js voring page link /////// -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-<!-- ///////////////////////////////// -->
 
-<!-- //////js voring page link /////// -->
-<script src="voting.js"></script>
-<!-- ///////////////////////////////// -->
 
-<script type="module" src="../js/home.js"></script>
 
-</body>
+
+        </header>
+
+
+        <main>
+
+            <!-- ////////////////////// canvas id ///////////////////////////// -->
+            <canvas id="myChart"></canvas>
+            <!-- ////////////////////// //////// ///////////////////////////// -->
+
+
+
+
+        </main>
+
+
+        <footer>
+            <ul class="footer-links">
+                <li class="footer-link"><a href=""><i class="fab fa-facebook-square"></i></a></li>
+                <li class="footer-link"><a href=""><i class="fab fa-instagram"></i></a></li>
+                <li class="footer-link"><a href=""><i class="fas fa-mask"></i></a></li>
+            </ul>
+            <h2>All rights reserved &copy; 2021 Mr.Comic </h2>
+        </footer>
+
+
+        <!-- //////js voring page link /////// -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+        <!-- ///////////////////////////////// -->
+
+        <!-- //////js voring page link /////// -->
+        <!-- <script src="voting.js"></script> -->
+        <!-- ///////////////////////////////// -->
+
+        <script type="module" src="js/voting.js"></script>
+
+    </body>
 
 
 
