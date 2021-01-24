@@ -332,6 +332,7 @@ main {
 	font-size: 2rem;
 	transition: var(--mainTransition);
 	margin-bottom: 5rem;
+	cursor: pointer;
 }
 
 .card-img {

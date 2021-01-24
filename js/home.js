@@ -68,7 +68,7 @@ form.addEventListener('keyup', (e) => {
 		document.querySelector('.more').classList.add('hide');
 		cardContainer.innerHTML = '';
 		for (let index = 0; index < choosenHero.length; index++) {
-			cardContainer.innerHTML += `<div class="single-card">
+			cardContainer.innerHTML += `<div class="single-card" data-id=${choosenHero[index].id}">
 							<img src=${choosenHero[index].src} alt=${choosenHero[index].name}
 								class="card-img">
 							<button class="btn-vote" data-id=${choosenHero[index].name}><i class="far fa-heart"></i></button>
@@ -76,6 +76,7 @@ form.addEventListener('keyup', (e) => {
 							<h3 class="card-title">${choosenHero[index].name}</h3>
 						</div>`;
 		}
+
 		const voteBtns = document.querySelectorAll('.btn-vote');
 		const votefullBtns = document.querySelectorAll('.btn-vote-full');
 
@@ -125,6 +126,7 @@ form.addEventListener('keyup', (e) => {
 		});
 	}
 
+
 	if (choosenHero.length === 0) {
 		if (search.value.length !== 0) {
 			cardContainer.innerHTML = `<p class='not-found'>Sorry, doesn't match any of our superhero names</p>`;
@@ -133,7 +135,7 @@ form.addEventListener('keyup', (e) => {
 			document.querySelector('.more').classList.remove('hide');
 			cardContainer.innerHTML = '';
 			for (let index = 0; index < 6; index++) {
-				cardContainer.innerHTML += `<div class="single-card">
+				cardContainer.innerHTML += `<div class="single-card" data-id=${superhero[index].id}>
 							<img src=${superhero[index].src} alt=${superhero[index].name}
 								class="card-img">
 							<button class="btn-vote" data-id=${superhero[index].name}><i class="far fa-heart"></i></button>
@@ -142,13 +144,14 @@ form.addEventListener('keyup', (e) => {
 						</div>`;
 			}
 			vote();
+			description();
 		}
 	}
 });
 
 //cards of the superhero
 for (let index = 0; index < 6; index++) {
-	cardContainer.innerHTML += `<div class="single-card">
+	cardContainer.innerHTML += `<div class="single-card" data-id=${superhero[index].id}>
 						<img src=${superhero[index].src} alt=${superhero[index].name}
 							class="card-img">
 						<button class="btn-vote" data-id=${superhero[index].name}><i class="far fa-heart"></i></button>
@@ -164,7 +167,7 @@ let indexNum = 6;
 
 const loadMore = () => {
 	for (let index = indexNum; index < cardNumbers; index++) {
-		cardContainer.innerHTML += `<div class="single-card">
+		cardContainer.innerHTML += `<div  class="single-card" data-id=${superhero[index].id}>
                     <img src=${superhero[index].src} alt=${superhero[index].name}
                         class="card-img">
                     <button class="btn-vote" data-id=${superhero[index].name}><i class="far fa-heart"></i></button>
@@ -179,6 +182,7 @@ const loadMore = () => {
 		cardNumbers += superhero.length - cardNumbers;
 	}
 	vote();
+	description();
 };
 
 showMoreBtn.addEventListener('click', loadMore);
@@ -231,3 +235,18 @@ function vote() {
 }
 
 vote();
+
+const description = () => {
+	const singleCards = document.querySelectorAll('.single-card');
+	singleCards.forEach((singleCard) => {
+		singleCard.addEventListener('click', (e) => {
+			e.preventDefault();
+			const element = Number(e.currentTarget.dataset.id);
+			let value = element;
+			localStorage.setItem('value', value);
+			window.location.href = 'description.html';
+		});
+	});
+};
+
+description();
