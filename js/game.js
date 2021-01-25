@@ -1,31 +1,93 @@
 'use strict';
+import { superhero } from './superheroData.js';
 
-var firstImageElement = document.getElementById('first-img');
-var secondImageElement = document.getElementById('second-img');
+let mainQuestions = ['Is the gender of your hero female?'];
 
-var firstImageIndex ;
-var firstImageIndex ;
+const content = document.querySelector('.content');
 
+let x = 1;
 
-function ImsgesGame(name , source){
-this.name=name;
-this.source=source;
+//first question
+window.addEventListener('load', (e) => {
+	content.innerHTML = `<div class="question-box">
+                    <div class="question">
+                        <h2>${mainQuestions[0]}</h2>
+                    </div>
+                    <div class="answers">
+                        <div class="answer-box">
+                            <img src="img/Batgirl.jpg" alt="">
+                            <p class="answer yes">yes</p>
+                        </div>
+                        <div class="answer-box">
+                            <img src="img/Batgirl.jpg" alt="">
+                            <p class="answer no">no</p>
+                        </div>
+                    </div>
+                </div>`;
+	const yes = document.querySelector('.yes');
+	const no = document.querySelector('.no');
 
-ImsgesGame.prototype.allImages.push(this);
+	yes.addEventListener('click', () => {
+		const filteredHero = superhero.filter((hero) => {
+			return hero.gender === 'female';
+		});
+		filteredHero.forEach((hero) => {
+			mainQuestions.push(hero.power);
+		});
+		nextQuestion(mainQuestions);
+	});
+
+	no.addEventListener('click', () => {
+		const filteredHero = superhero.filter((hero) => {
+			return hero.gender === 'male';
+		});
+		filteredHero.forEach((hero) => {
+			mainQuestions.push(hero.power);
+		});
+		nextQuestion(mainQuestions);
+	});
+});
+
+const nextQuestion = (questions) => {
+	const index = randomIndex(questions.length);
+	content.innerHTML = `<div class="question-box">
+                    <div class="question">
+                        <h2>${questions[index]}</h2>
+                    </div>
+                    <div class="answers">
+                        <div class="answer-box">
+                            <img src=${superhero[x].src} alt="">
+                            <p class="answer yes">yes</p>
+                        </div>
+                        <div class="answer-box">
+                            <img src=${superhero[x].src} alt="">
+                            <p class="answer no">no</p>
+                        </div>
+                    </div>
+                </div>`;
+
+	const yes = document.querySelector('.yes');
+	const no = document.querySelector('.no');
+
+	x++;
+
+	yes.addEventListener('click', () => {
+		if (questions.length) {
+			const answer = questions[index];
+			console.log(answer);
+		}
+	});
+
+	no.addEventListener('click', () => {
+		questions.splice(index, 1);
+		if (questions.length) {
+			nextQuestion(questions);
+		} else {
+			console.log('sorry');
+		}
+	});
+};
+
+function randomIndex() {
+	return Math.floor(Math.random() * mainQuestions.length);
 }
-
-ImsgesGame.prototype.allImages=[];
-
-new ImsgesGame ('Number 1' , 'img/num1.gif');
-new ImsgesGame ('Number 2' , 'img/num2.jpg');
-new ImsgesGame ('Number 3' , 'img/num3.jpg');
-new ImsgesGame ('Number 4' , 'img/num4.jpg');
-
-function renderTwoImages(){
-for (var i=0 ; i < ImsgesGame.prototype.allImages.lenght ; i++){
-firstImageElement[i] ;
-secondImageElement[i+1];
-
-}
-}
-renderTwoImages();
