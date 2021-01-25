@@ -386,9 +386,36 @@ main {
 	opacity: 0.5;
 }
 
+.btn-desc {
+	position: absolute;
+	top: 90%;
+	left: 50%;
+	transform: translateX(-50%);
+	border: 2px solid var(--secondColor);
+	color: var(--secondColor);
+	background-color: transparent;
+	width: 5rem;
+	padding: 0.9rem 1rem 1rem;
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	font-size: 1.2rem;
+	transition: var(--mainTransition);
+	text-transform: capitalize;
+	display: block;
+	margin: 0 auto;
+	visibility: hidden;
+}
+
+.btn-desc:hover {
+	color: var(--secondColor);
+	background-color: rgba(255, 255, 255, 0.4);
+	cursor: pointer;
+}
+
 .single-card:hover .card-title,
 .single-card:hover .btn-vote,
-.single-card:hover .btn-vote-full {
+.single-card:hover .btn-vote-full,
+.single-card:hover .btn-desc {
 	visibility: visible;
 	transition: var(--mainTransition);
 }
