@@ -119,6 +119,7 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	display: none;
 }
 
 .question-box {
@@ -264,6 +265,52 @@ main {
 	}
 	100% {
 		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+/* Styling start quiz */
+.start-btn {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	transition: var(--mainTransition);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.start-btn button {
+	background: rgb(245, 245, 37);
+	color: rgb(34, 199, 182);
+	font-size: 25px;
+	font-weight: 650;
+	border: none;
+	padding: 15px 30px;
+	border-radius: 20px;
+	cursor: pointer;
+	animation: lighting 1s infinite;
+}
+
+.start-btn p {
+	font-size: 1.5rem;
+	font-weight: bold;
+	letter-spacing: 0.15rem;
+	text-align: center;
+	margin-bottom: 2rem;
+	text-transform: capitalize;
+}
+
+@keyframes lighting {
+	0% {
+		transform: scale(1);
+	}
+	75% {
+		transform: scale(1.1);
+	}
+	100% {
 		transform: scale(1);
 	}
 }
