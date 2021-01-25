@@ -1,9 +1,14 @@
 'use strict';
 import { superhero } from './superheroData.js';
 
-let mainQuestions = ['Is the gender of your hero female?'];
+let question1 = 'Is the gender of your hero female?';
+let mainQuestions = [];
 
 const content = document.querySelector('.content');
+const result = document.querySelector('.result');
+const again = document.querySelector('.again');
+const failed = document.querySelector('.failed');
+const success = document.querySelector('.success');
 
 let x = 1;
 
@@ -11,7 +16,7 @@ let x = 1;
 window.addEventListener('load', (e) => {
 	content.innerHTML = `<div class="question-box">
                     <div class="question">
-                        <h2>${mainQuestions[0]}</h2>
+                        <h2>${question1}</h2>
                     </div>
                     <div class="answers">
                         <div class="answer-box">
@@ -49,7 +54,7 @@ window.addEventListener('load', (e) => {
 });
 
 const nextQuestion = (questions) => {
-	const index = randomIndex(questions.length);
+	const index = randomIndex();
 	content.innerHTML = `<div class="question-box">
                     <div class="question">
                         <h2>${questions[index]}</h2>
@@ -74,7 +79,14 @@ const nextQuestion = (questions) => {
 	yes.addEventListener('click', () => {
 		if (questions.length) {
 			const answer = questions[index];
-			console.log(answer);
+			const hero = superhero.find((hero) => {
+				return hero.power === answer;
+			});
+			result.style.display = 'block';
+			content.style.visibility = 'hidden';
+			again.classList.remove('hide');
+			success.classList.remove('hide');
+			result.innerHTML = `<img src=${hero.src} alt="">`;
 		}
 	});
 
@@ -83,11 +95,24 @@ const nextQuestion = (questions) => {
 		if (questions.length) {
 			nextQuestion(questions);
 		} else {
-			console.log('sorry');
+			result.style.display = 'block';
+			content.style.visibility = 'hidden';
+			again.classList.remove('hide');
+			failed.classList.remove('hide');
+			result.innerHTML = `<img src='img/sorry.jpg' alt="">`;
 		}
 	});
 };
 
+again.addEventListener('click', (e) => {
+	location.reload();
+});
+
+//utitlty
 function randomIndex() {
 	return Math.floor(Math.random() * mainQuestions.length);
 }
+
+setInterval(() => {
+	again.style.opacity = 1;
+}, 10000);
