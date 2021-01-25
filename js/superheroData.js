@@ -8,6 +8,7 @@ export let superhero = [
 		gender: 'male',
 		personality: 'good',
 		power: 'high tech gear, martial arts, and high intelligence',
+		question: "does the character's costume inspire from bats?",
 		vote: 0,
 	},
 	{
@@ -20,6 +21,7 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'strength, speed, and agility. She can fly and is trained in hand-to-hand combat. She also had the ability to talk to animals.',
+		question: 'can the character talk to animals?',
 		vote: 0,
 	},
 	{
@@ -31,6 +33,7 @@ export let superhero = [
 		gender: 'male',
 		personality: 'good',
 		power: 'flight, superhuman strength, x-ray vision',
+		question: 'does the character have x-ray vision?',
 		vote: 0,
 	},
 	{
@@ -43,6 +46,7 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'flight, proportionally superhuman strength, and the ability to project bio-electrical stings.',
+		question: 'does the character have bio-electrical stings?',
 		vote: 0,
 	},
 	{
@@ -54,6 +58,7 @@ export let superhero = [
 		gender: 'male',
 		personality: 'good',
 		power: 'spider-sense, superhuman strength, perfect balance and equilibrium',
+		question: 'does the character have a spider-sense?',
 		vote: 0,
 	},
 	{
@@ -66,6 +71,8 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'control all forms of weather over vast areas. She has been able to control both Earthly and extraterrestrial ecosystems.',
+		question:
+			'does the character able to control all forms of weather over vast areas?',
 		vote: 0,
 	},
 	{
@@ -78,6 +85,7 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'Genius level intellect Proficient scientist and engineer Powered armor suit',
+		question: 'does the character wear a Powered armor suit?',
 		vote: 0,
 	},
 	{
@@ -89,7 +97,8 @@ export let superhero = [
 		gender: 'male',
 		personality: 'good',
 		power:
-			'uperhuman strength and reflexes, enhanced senses and tracking abilities, and a special healing power that also slows his aging.',
+			'superhuman strength and reflexes, enhanced senses and tracking abilities, and a special healing power that also slows his aging.',
+		question: 'can the character get knives out from his hand?',
 		vote: 0,
 	},
 	{
@@ -101,6 +110,7 @@ export let superhero = [
 		gender: 'female',
 		personality: 'good',
 		power: 'telepathy and telekinesis',
+		question: "does the character's abilities telepathy and telekinesis?",
 		vote: 0,
 	},
 	{
@@ -113,6 +123,8 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'agility, strength, speed, endurance, and reaction time superior to any Olympic athlete who ever competed. The Super-Soldier formula that he has metabolized has enhanced all of his bodily functions to the peak of human efficiency.',
+		question:
+			'does the character use a special shield with a star on it when he fight?',
 		vote: 0,
 	},
 	{
@@ -125,6 +137,7 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'superhuman ability to manipulate chaos magic, given to her by the demon Chthon',
+		question: 'is the character a witch and deal with chaos magic?',
 		vote: 0,
 	},
 	{
@@ -137,6 +150,7 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'ncredible superhuman strength, durability, and healing factor. Becomes more powerful as anger increases.',
+		question: 'does the character become more powerful as anger increases?',
 		vote: 0,
 	},
 	{
@@ -149,6 +163,8 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'Master in the covert arts of espionage, infiltration & subterfuge. Expert martial artist, with exceptional agility & athletic ability. Utilizes advanced weaponry including custom stun batons & "Widow"s Bite" bracelets capable of stunning enemies with electrical discharges.',
+		question:
+			'is the character an advanced weaponry including custom stun batons & "Widow\'s Bite"?',
 		vote: 0,
 	},
 	{
@@ -161,6 +177,8 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'Superhuman strength, speed, endurance & resistance to injury, Member of the otherworldly & virtually immortal Asgardian race, Wields the enchanted Uru-forged hammer Mjolnir, which grants mastery over the elements of thunder & lightning, as well as the ability to fly & open interdimensional gateways.',
+		question:
+			'does the character use a hummer and control thunder & lightning?',
 		vote: 0,
 	},
 	{
@@ -173,6 +191,7 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'superhuman strength, stamina, durability, and agility. Captain Marvel can also fly at great speeds, well beyond the sound barrier.',
+		question: 'can the character fly at great speeds beyond the sound barrier?',
 		vote: 0,
 	},
 	{
@@ -185,6 +204,7 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'"super speed", which includes the ability to run, move, and think extremely fast, use superhuman reflexes, and seemingly violate certain laws of physics.',
+		question: 'can the character move in "super super speed"?',
 		vote: 0,
 	},
 
@@ -198,6 +218,7 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'invisibility and force fields. Her invisibility power deals with bending light waves and allows her to render herself and other objects invisible.',
+		question: 'can the character turn into Invisible?',
 		vote: 0,
 	},
 	{
@@ -206,10 +227,11 @@ export let superhero = [
 		src: 'img/Deadpool.png',
 		bio:
 			'Master martial artist, swordsman and marksman, Master strategist and improviser, has several voices in his head the represent parts of himself that give him advice, easily defies expectation in most instances, Accelerated Healing Factor, Extended longevity, Immunity to telepathy, teleportation (aided by machine), holographic disguise (aided by machine), Superhuman stamina, agility, flexibility and reflexes, may or may not be aware of the world beyond the fourth wall (IE, might know he is fictional)',
-		gender: 'female',
+		gender: 'male',
 		personality: 'good',
 		power:
 			'Accelerated Healing Factor, Extended longevity, Immunity to telepathy, teleportation (aided by machine), holographic disguise (aided by machine), Superhuman stamina, agility, flexibility and reflexes, may or may not be aware of the world beyond the fourth wall (IE, might know he is fictional)',
+		question: 'does the character have a burned face?',
 		vote: 0,
 	},
 	{
@@ -222,6 +244,7 @@ export let superhero = [
 		personality: 'good',
 		power:
 			'Photographic memory; utility belt which contains battarang (bat boomerang), tear gas pellets, bola, smoke bombs, mini-binoculars, swingline with grapple; utility pocket book which has other helpful aids. She also has keen athletic and acrobatic skills.',
+		question: 'does the character use a utility belt?',
 		vote: 0,
 	},
 ];

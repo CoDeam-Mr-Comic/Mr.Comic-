@@ -35,7 +35,7 @@ window.addEventListener('load', (e) => {
 			return hero.gender === 'female';
 		});
 		filteredHero.forEach((hero) => {
-			mainQuestions.push(hero.power);
+			mainQuestions.push(hero.question);
 		});
 		nextQuestion(mainQuestions);
 	});
@@ -45,7 +45,7 @@ window.addEventListener('load', (e) => {
 			return hero.gender === 'male';
 		});
 		filteredHero.forEach((hero) => {
-			mainQuestions.push(hero.power);
+			mainQuestions.push(hero.question);
 		});
 		nextQuestion(mainQuestions);
 	});
@@ -76,7 +76,7 @@ const nextQuestion = (questions) => {
 		if (questions.length) {
 			const answer = questions[index];
 			const hero = superhero.find((hero) => {
-				return hero.power === answer;
+				return hero.question === answer;
 			});
 			result.style.display = 'block';
 			content.style.visibility = 'hidden';
