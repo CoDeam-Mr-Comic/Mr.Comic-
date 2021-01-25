@@ -1,0 +1,91 @@
+.close-button > div {
+    width: 24px;
+    height: 4px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 35px;
+    right:  10px;
+}
+.close-button> div:first-child{
+    -webkit-transform: rotate(45deg);
+}
+.close-button> div:last-child{
+    -webkit-transform: rotate(-45deg);
+}
+.close-button:hover{
+    background-color:rgb(99, 9, 9);
+    cursor: pointer;
+}
+.close-button:hover .close{
+    background-color: rgb(99, 9, 9);
+    cursor: pointer;
+}
+.show-btn{
+    background-color:rgb(99, 9, 9);
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+legend{
+    font-size: 22px;  
+}
+.HeroForm{
+    /* display: none; */
+    width: 400px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-image:url(https://img.freepik.com/free-vector/superhero-gallant-pose_24381-736.jpg?size=626&ext=jpg) ;
+   background-repeat: no-repeat;
+   background-size: cover;
+    text-align: center;
+    color: white;
+    border-radius: 40px;
+}
+/* .HeroForm::after{
+        content: "";
+        background-color: rgb(241, 236, 236);
+        opacity: 6;
+       
+} */
+
+.HeroForm input[type = "text"], .HeroForm input[type="url"]{
+    border: 0;
+    background: none;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid white;
+    padding: 14px 10px;
+    width: 200px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transform: 0.25s;
+}
+label {
+    font-size: 20px;
+}
+.submitbtn{
+    display: inline-block;
+    font-size: 20px;
+    text-align: center;
+    position :relative;
+    margin-left: 20px;
+    border-radius: 10px;
+    background-color: rgb(99, 9, 9);
+    color: rgb(221, 210, 221);
+}
+
+.submitbtn:hover{
+    font-size: 15px;
+    font-weight: bold;
+    background-color:white;
+    color:black;
+    border-radius: 5px;
+}
