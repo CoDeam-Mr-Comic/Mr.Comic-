@@ -20,12 +20,14 @@ stay tuned
 - Its just to get you back 10 - 15 years ago , and getting fun as much as you were feeling back then.
 
 #### WireFrames
-![Home](https://drive.google.com/file/d/1bSm2f-oQAad2Y2yvBnfbYDqqqCA3cRUN/view?usp=sharing)
+- Home Page
+![home](imgabout/homepage.png)
+- Discreption Page
+![discreption](imgabout/discriptionpage.png)
+- Game Page
+![game](imgabout/gamepage.png)
+- Voting Page
+![votingpage](imgabout/votingpage.png)
+- About us Page
+![aboutpage](imgabout/aboutpage.png)
 
-![voting](https://drive.google.com/file/d/1T58g7Mcwo4qRzqRqu1OZeI35h8KAy8hb/view?usp=sharing)
-
-![game](https://drive.google.com/file/d/14mtdasEeezxd3oxZ5GQ0j3w2raes1E80/view?usp=sharing)
-
-![discription](https://drive.google.com/file/d/1nmFGo7g0PmmiejCStzxs2kR0HJc32rhC/view?usp=sharing)
-
-![about](https://drive.google.com/file/d/1EmbOfPhZNhFsq1U7sI4ujFNnCJHaO43N/view?usp=sharing)
