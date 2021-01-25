@@ -10,8 +10,6 @@ const again = document.querySelector('.again');
 const failed = document.querySelector('.failed');
 const success = document.querySelector('.success');
 
-let x = 1;
-
 //first question
 window.addEventListener('load', (e) => {
 	content.innerHTML = `<div class="question-box">
@@ -20,11 +18,11 @@ window.addEventListener('load', (e) => {
                     </div>
                     <div class="answers">
                         <div class="answer-box">
-                            <img src="img/Batgirl.jpg" alt="">
+                            <img src="utilityImg/answer.jpg" alt="">
                             <p class="answer yes">yes</p>
                         </div>
                         <div class="answer-box">
-                            <img src="img/Batgirl.jpg" alt="">
+                            <img src="utilityImg/answer.jpg" alt="">
                             <p class="answer no">no</p>
                         </div>
                     </div>
@@ -61,11 +59,11 @@ const nextQuestion = (questions) => {
                     </div>
                     <div class="answers">
                         <div class="answer-box">
-                            <img src=${superhero[x].src} alt="">
+                            <img src="utilityImg/answer.jpg" alt="">
                             <p class="answer yes">yes</p>
                         </div>
                         <div class="answer-box">
-                            <img src=${superhero[x].src} alt="">
+                            <img src="utilityImg/answer.jpg" alt="">
                             <p class="answer no">no</p>
                         </div>
                     </div>
@@ -73,8 +71,6 @@ const nextQuestion = (questions) => {
 
 	const yes = document.querySelector('.yes');
 	const no = document.querySelector('.no');
-
-	x++;
 
 	yes.addEventListener('click', () => {
 		if (questions.length) {
@@ -99,7 +95,7 @@ const nextQuestion = (questions) => {
 			content.style.visibility = 'hidden';
 			again.classList.remove('hide');
 			failed.classList.remove('hide');
-			result.innerHTML = `<img src='img/sorry.jpg' alt="">`;
+			result.innerHTML = `<img src='utilityImg/sorry.jpg' alt="">`;
 		}
 	});
 };
@@ -108,11 +104,7 @@ again.addEventListener('click', (e) => {
 	location.reload();
 });
 
-//utitlty
+//utility
 function randomIndex() {
 	return Math.floor(Math.random() * mainQuestions.length);
 }
-
-setInterval(() => {
-	again.style.opacity = 1;
-}, 10000);
