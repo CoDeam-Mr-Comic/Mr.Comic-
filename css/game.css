@@ -44,7 +44,7 @@ ul {
 }
 
 main {
-	height: 100vh;
+	height: calc(100vh - 120px);
 	width: 100%;
 }
 
@@ -109,7 +109,6 @@ main {
 /* main */
 main {
 	position: relative;
-	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -120,27 +119,32 @@ main {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 7rem;
 }
 
 .question-box {
-	flex: 0 0 90%;
+	flex: 0 0 75%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	background-color: purple;
+	border-radius: 2rem;
 }
 
 .question {
 	margin: 5rem 0;
 	font-size: 1.2rem;
 	letter-spacing: 0.2rem;
+	text-transform: capitalize;
+	max-width: 60%;
+	text-align: center;
+	color: var(--darkColor);
 }
 
 .answers {
 	width: 60%;
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	align-items: center;
 	margin-bottom: 3rem;
 }
@@ -150,19 +154,8 @@ main {
 	width: 15rem;
 	height: 20rem;
 	transition: var(--mainTransition);
-}
-
-.answer-box::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background: linear-gradient(180deg, #3296b4, #000, rgb(155, 31, 31));
-	transition: var(--mainTransition);
-	z-index: 1;
-	opacity: 0;
+	border-radius: 1rem;
+	overflow: hidden;
 }
 
 .answer-box:hover::before {
@@ -220,8 +213,8 @@ main {
 }
 
 .result {
-	width: 30rem;
-	height: 45rem;
+	width: 25rem;
+	height: 35rem;
 	transition: var(--mainTransition);
 	display: none;
 	border-radius: 2rem;
@@ -238,9 +231,7 @@ main {
 .again {
 	padding: 1rem;
 	text-align: center;
-	animation: show 5s 1;
-	animation-delay: 5s;
-	opacity: 0;
+	animation: showBtn 5s 1;
 	cursor: pointer;
 }
 
@@ -259,6 +250,17 @@ main {
 	0% {
 		opacity: 0;
 		transform: scale(2.5);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes showBtn {
+	0% {
+		opacity: 0;
+		transform: scale(1.5);
 	}
 	100% {
 		opacity: 1;
