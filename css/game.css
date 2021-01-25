@@ -128,6 +128,7 @@ ul {
 
 /* main */
 main {
+	position: relative;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -229,6 +230,60 @@ main {
 	transform: translate(-50%, -50%);
 	opacity: 1;
 	cursor: pointer;
+}
+
+.result-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.result {
+	width: 30rem;
+	height: 45rem;
+	transition: var(--mainTransition);
+	display: none;
+	border-radius: 2rem;
+}
+
+.result img {
+	width: 100%;
+	height: 100%;
+	transition: var(--mainTransition);
+	animation: show 5s 1;
+	border-radius: 2rem;
+}
+
+.again {
+	padding: 1rem;
+	text-align: center;
+	animation: show 5s 1;
+	animation-delay: 5s;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.icon {
+	font-size: 3rem;
+	color: var(--darkColor);
+}
+
+.failed,
+.success {
+	margin-top: 5px;
+	font-weight: bold;
+}
+
+@keyframes show {
+	0% {
+		opacity: 0;
+		transform: scale(2.5);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
 }
 
 /* end of main*/
