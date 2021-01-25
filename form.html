@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Form</title>
-        <!-- <link rel="stylesheet" href="css/reset.css"> -->
-        <link rel="stylesheet" href="css/form.css">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SuperHero</title>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;700&family=Gorditas:wght@400;700&family=Potta+One&display=swap"
+        rel="stylesheet">
+    <!-- style -->
+    <link rel="stylesheet" href="css/form.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/a24ea374e8.js" crossorigin="anonymous"></script>
+</head>
 
-    <body>
-
-
+<body>
+    <!-- header -->
+    <header>
+        <nav class="nav-white">
+            <ul class="links">
+                <li class="link-item"><a href="home.html">Home</a></li>
+                <li class="link-item"><a href="voting.html">voting</a></li>
+                <li class="logo-container"><img src="img/logo.png" alt="logo" class="logo"></li>
+                <li class="link-item"><a href="game.html">game</a></li>
+                <li class="link-item"><a href="about.html">about us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
         <div class="container">
-
-            <label for="show" class="show-btn">Add Hero</label>
-            <form action="" class="HeroForm hide" method="POST">
-                <div class="close-button">
+            <!-- <label for="show" class="show-btn">Add Hero</label> -->
+            <form action="" class="HeroForm" method="POST">
+                <!-- <div class="close-button">
                     <div class="close"></div>
                     <div class="close"></div>
-                </div>
+                </div> -->
                 <fieldset>
                     <legend>Your Hero Info</legend>
                     <br>
@@ -56,8 +74,20 @@
                 </fieldset>
             </form>
         </div>
-
-        <script src="js/form.js"></script>
-    </body>
+    </main>
+    <footer>
+        <ul class="footer-links">
+            <li class="footer-link"><a href="https://www.facebook.com/" target="_blank"><i
+                        class="fab fa-facebook-square"></i></a></li>
+            <li class="footer-link"><a href="https://www.instagram.com/" target="_blank"><i
+                        class="fab fa-instagram"></i></a></li>
+            <li class="footer-link"><a href="https://www.marvel.com/comics" target="_blank"><i
+                        class="fas fa-mask"></i></a></li>
+        </ul>
+        <h2>All rights reserved &copy; 2021 Mr.Comic </h2>
+    </footer>
+    <!-- javascript -->
+    <script type="module" src="js/form.js"></script>
+</body>
 
 </html>
