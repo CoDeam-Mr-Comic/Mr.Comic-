@@ -324,7 +324,7 @@ main {
 	flex: 0 0 26%;
 	overflow: hidden;
 	position: relative;
-	height: 30rem;
+	height: 33rem;
 	background-color: var(--mainColor);
 	border-radius: 2rem;
 	color: var(--secondColor);
