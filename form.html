@@ -1,60 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-    <!-- <link rel="stylesheet" href="css/reset.css"> -->
-    <link rel="stylesheet" href="css/form.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
-</head>
-<body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form</title>
+        <!-- <link rel="stylesheet" href="css/reset.css"> -->
+        <link rel="stylesheet" href="css/form.css">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
 
 
-<div class="container">
-    
-    <input type="checkbox" id = "show">
-    <label for="show" class ="show-btn">Add Hero</label>
-     <form action=""class = "HeroForm" method="POST">
-        <div class = "close-button">
-            <div class = "close"></div>
-            <div class = "close"></div>
+        <div class="container">
+
+            <label for="show" class="show-btn">Add Hero</label>
+            <form action="" class="HeroForm hide" method="POST">
+                <div class="close-button">
+                    <div class="close"></div>
+                    <div class="close"></div>
+                </div>
+                <fieldset>
+                    <legend>Your Hero Info</legend>
+                    <br>
+                    <br>
+                    <label for="nameFeild">- Hero Name : </label>
+                    <input type="text" id="nameFeild" name="nameFeild" required minlength="1" maxlength="20">
+                    <br>
+                    <br>
+                    <label for="img">- Image Link : </label>
+                    <input type="url" id="heroimg" name="heroimg">
+                    <br>
+                    <br>
+                    <label for="bio">- Hero Bio.... : </label>
+                    <input type="text" id="herobio" name="herobio" required maxlength="100">
+                    <br>
+                    <br>
+                    <label for="power">- Hero Power: </label>
+                    <input type="text" id="heropower" name="heropower" required maxlength="50">
+                    <br>
+                    <br>
+                    <label for="gender">- Gender : </label>
+
+                    <input type="radio" name="gender" value="male">
+                    <label for="male"> Male: </label>
+
+                    <input type="radio" name="gender" value="female">
+                    <label for="female"> Female: </label>
+                    <br>
+                    <br>
+                    <input type="submit" value="Add Hero" class="submitbtn">
+                    <!-- <input type="submit" value="Cancel" class ="submitbtn"> -->
+
+                </fieldset>
+            </form>
         </div>
-    <fieldset>
-        <legend>Your Hero Info</legend>
-        <br>
-        <br>
-        <label for="nameFeild">- Hero Name : </label>
-        <input type="text" id="nameFeild" name = "nameFeild" required minlength="1" maxlength="20">
-        <br>
-        <br>
-        <label for="img">- Image Link : </label>
-        <input type= "url" id="heroimg" name = "heroimg" >
-        <br>
-        <br>
-        <label for="bio">-  Hero Bio.... : </label>
-        <input type="text" id="herobio" name = "herobio" required  maxlength="100">
-        <br>
-        <br>
-        <label for="power">- Hero Power: </label>
-        <input type="text" id="heropower" name = "heropower" required  maxlength="50">
-        <br>
-        <br>
-        <label for="gender">- Gender : </label>
-       
-        <input type="radio" name="gender" value="male">
-        <label for="male"> Male: </label>
-       
-        <input type="radio" name="gender" value="female">
-        <label for="female"> Female: </label>
-        <br>
-        <br>
-        <input type="submit" value="Add Hero" class ="submitbtn">
-       <!-- <input type="submit" value="Cancel" class ="submitbtn"> -->
 
-    </fieldset>
-</div>
+        <script src="js/form.js"></script>
+    </body>
 
-<script src = "js/form.js"></script>
-</body>
 </html>
