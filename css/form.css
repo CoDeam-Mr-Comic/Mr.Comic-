@@ -20,6 +20,9 @@
     background-color: rgb(99, 9, 9);
     cursor: pointer;
 }
+.hide {
+	display: none;
+}
 .show-btn{
     background-color:rgb(99, 9, 9);
     padding: 10px 20px;
