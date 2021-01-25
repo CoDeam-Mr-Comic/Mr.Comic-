@@ -80,15 +80,13 @@ var myChart = new Chart(ctx, {
 			{
 				label: 'Votes',
 				data: superheroVotes,
-				backgroundColor: function (context) {
-					var index = context.dataIndex;
-					var value = context.dataset.data[index];
-					return value < 0
-						? 'red' // draw negative values in red
-						: index % 2
-						? 'blue' // else, alternate values in blue and green
-						: 'green';
-				},
+				backgroundColor:   ['var(--darkColor)' ,
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+			],
 
 				borderColor: [
 					'rgba(255, 99, 132, 1)',
