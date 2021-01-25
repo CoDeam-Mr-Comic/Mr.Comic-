@@ -21,13 +21,15 @@ stay tuned
 
 #### WireFrames
 - Home Page
-![home](https://drive.google.com/drive/u/0/folders/1-a7IXOpTd2NavaLocKJbFi2fRTJj167v)
-- Discreption Page
-![discreption](imgabout/discriptionpage.png)
+
+![home](imgwireFrames/homepage.png)
+- Description Page
+![discreption](imgwireFrames/discriptionpage.png)
 - Game Page
-![game](imgabout/gamepage.png)
+![game](imgwireFrames/gamepage.png)
 - Voting Page
-![votingpage](imgabout/votingpage.png)
+![votingpage](imgwireFrames/votingpage.png)
 - About us Page
-![aboutpage](imgabout/aboutpage.png)
+![aboutpage](imgwireFrames/aboutpage.png)
+
 
