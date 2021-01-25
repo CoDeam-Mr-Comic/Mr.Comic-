@@ -43,14 +43,18 @@ ul {
 	display: none;
 }
 
-/* header */
+main {
+	height: 100vh;
+	width: 100%;
+}
 
+/* header */
 .nav-white {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100px;
+	height: 120px;
 	background-color: var(--secondColor);
 	transition: var(--mainTransition);
 	box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.64);
@@ -60,16 +64,16 @@ ul {
 	flex: 0 0 calc(40% - 1rem);
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	list-style: none;
 }
 
 .link-item {
-	font-size: 1.2rem;
-	padding: 1rem;
+	width: 10rem;
+	font-size: 1.5rem;
 	text-transform: capitalize;
 	transition: var(--mainTransition);
-	height: 115px;
+	height: 120px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -78,9 +82,6 @@ ul {
 
 .link-item:hover {
 	background-color: var(--thirdColor);
-	padding: 1rem 1.5rem;
-	border-bottom-left-radius: 1rem;
-	border-bottom-right-radius: 1rem;
 	cursor: pointer;
 }
 
@@ -99,8 +100,9 @@ ul {
 }
 
 .logo-container {
-	width: 8rem;
-	height: 9rem;
+	padding-top: 1rem;
+	width: 10rem;
+	height: 13rem;
 }
 /* end of header*/
 
