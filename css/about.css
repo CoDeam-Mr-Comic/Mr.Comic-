@@ -46,7 +46,6 @@ ul {
 main {
 	height: 100vh;
 	width: 100%;
-	
 }
 
 /* header */
@@ -56,7 +55,7 @@ main {
 	justify-content: center;
 	align-items: center;
 	height: 120px;
-	background-color: var(--secondColor);
+	background-color: rgb(250, 185, 47);
 	transition: var(--mainTransition);
 	box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.64);
 }
@@ -82,16 +81,16 @@ main {
 }
 
 .link-item:hover {
-	background-color: var(--thirdColor);
+	background-color: rgb(0, 123, 196);
 	cursor: pointer;
 }
 
 .link-item:hover a {
-	color: var(--secondColor);
+	color: rgb(250, 185, 47);
 }
 
 .link-item a {
-	color: var(--mainColor);
+	color: rgb(0, 123, 196);
 	letter-spacing: 0.2rem;
 }
 
@@ -103,7 +102,7 @@ main {
 .logo-container {
 	padding-top: 1rem;
 	width: 10rem;
-	height: 13rem;
+	height: 9rem;
 }
 /* end of header*/
 
@@ -111,74 +110,74 @@ main {
 /* main{
 	overflow: hidden;
 } */
-.mainimg{
+.mainimg {
 	align-items: center;
-	width: 100%; 
+	width: 100%;
 }
-.container{
-	position: absolute;
-	top: 150px; 
-	 left: 10%;
-	align-items: center;
-	display:grid;
+.container {
+	/* position: absolute;
+	top: 150px;
+	left: 10%; */
+	margin-top: 7rem;
+	display: grid;
 	grid-gap: 10px;
 	justify-items: center;
+	align-items: center;
 	grid-template-areas:
-	'side side p1 p2 p3'
-	'side side p4 p5 p6'
-	'side side p4 p5 p6' ;
+		'side side p1 p2 p3'
+		'side side p4 p5 p6'
+		'side side p4 p5 p6';
 	margin-right: 70px;
-	
 }
-.container>*{
+.container > * {
 	padding: 30px;
 }
-.side{
+.side {
 	grid-area: side;
 }
-.profile{
+.profile {
 	border: 4px solid var(--mainColor);
 	width: 250px;
 	text-align: center;
 	align-items: center;
 }
-.profile1{
+.profile1 {
 	grid-area: p1;
 }
-.profile2{
+.profile2 {
 	grid-area: p2;
 }
-.profile3{
+.profile3 {
 	grid-area: p3;
 }
-.profile4{
+.profile4 {
 	grid-area: p4;
 }
-.profile5{
+.profile5 {
 	grid-area: p5;
 }
-.profile6{
+.profile6 {
 	grid-area: p6;
 }
 
-h1{
+h1 {
 	font-size: 40px;
 }
 
- .profileimg {
+.profileimg {
 	display: inline-block;
 	text-align: center;
 	width: 170px;
 	overflow: hidden;
 	border-radius: 5%;
 }
- h5 {
+h5 {
 	color: var(--mainColor);
 	text-align: center;
 	font-size: 1.1rem;
 	margin-top: 10px;
 }
-.social{
+.social {
 	list-style: none;
 	font-size: 2rem;
 	display: flex;
@@ -186,17 +185,17 @@ h1{
 	margin-top: 4px;
 	text-align: center;
 }
-.social>li{
-	font-size:20px ;
+.social > li {
+	font-size: 20px;
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
 	height: 10px;
 }
-.social a{
+.social a {
 	color: var(--mainColor);
 	transition: var(--mainTransition);
 }
-.social a:hover{
+.social a:hover {
 	color: var(--thirdColor);
 }
 
@@ -207,23 +206,22 @@ footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
-	background-color: var(--darkColor);
+	background-color: rgb(0, 21, 70);
 	color: var(--secondColor);
 	overflow: hidden;
 	padding: 1.5rem 0;
 }
 
- .footer-links {
+.footer-links {
 	list-style: none;
 	width: 10%;
-	font-size: 2rem;
 	display: flex;
 	justify-content: space-around;
 	margin-bottom: 1rem;
 }
 
 .footer-links a {
+	font-size: 2rem;
 	color: var(--secondColor);
 	transition: var(--mainTransition);
 }
@@ -233,8 +231,10 @@ footer {
 }
 
 footer h2 {
+	font-size: 1.3rem;
 	text-transform: capitalize;
 	letter-spacing: 0.2rem;
-} 
+	color: rgb(151, 161, 170);
+}
 
 /* end of footer */
