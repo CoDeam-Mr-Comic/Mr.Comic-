@@ -5,7 +5,8 @@ let question1 = 'Is the gender of your hero female?';
 let mainQuestions = [];
 
 const content = document.querySelector('.content');
-const startBtn = document.querySelector('.start-btn');
+const startBtn = document.querySelector('.start-btn button');
+const startContainer = document.querySelector('.start-btn');
 
 const result = document.querySelector('.result');
 const again = document.querySelector('.again');
@@ -13,7 +14,7 @@ const failed = document.querySelector('.failed');
 const success = document.querySelector('.success');
 
 startBtn.addEventListener('click', () => {
-	startBtn.style.display = 'none';
+	startContainer.style.display = 'none';
 	content.style.display = 'block';
 });
 

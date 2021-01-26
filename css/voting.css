@@ -101,6 +101,10 @@ ul {
 }
 
 /* ///////////////////header shine/////////////////////// */
+main {
+	position: relative;
+}
+
 .header-text {
 	margin: 0 auto;
 	width: 100%;
@@ -108,8 +112,8 @@ ul {
 	justify-content: center;
 	align-items: center;
 	height: 200px;
-	position: relative;
-	top: 300px;
+	position: absolute;
+	top: 10%;
 	z-index: -1;
 	background-color: rgb(78, 0, 0);
 	transition: var(--mainTransition);
@@ -158,6 +162,7 @@ ul {
 	position: relative;
 	left: 190px;
 }
+
 @keyframes shine {
 	0% {
 		background-position-x: -500%;
@@ -171,7 +176,7 @@ ul {
 
 /* end of header*/
 main {
-	/* margin: 5rem 0; */
+	margin: 5rem 0;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -244,3 +249,58 @@ footer h2 {
 
 /* end of footer */
 /* /////////////////////////////////// */
+
+/* media queries*/
+@media screen and (max-width: 1025px) {
+	.footer-links {
+		width: 15%;
+	}
+
+	.link-item {
+		width: 8rem;
+		font-size: 1.2rem;
+	}
+}
+
+@media screen and (max-width: 769px) {
+	.footer-links {
+		width: 17%;
+	}
+
+	.footer-links a {
+		font-size: 1.7rem;
+	}
+
+	footer h2 {
+		font-size: 1.1rem;
+	}
+
+	.link-item {
+		width: 6rem;
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 426px) {
+	footer {
+		height: 80px;
+		padding: 1rem 0;
+	}
+
+	.footer-links {
+		width: 25%;
+	}
+
+	.footer-links a {
+		font-size: 1rem;
+	}
+
+	footer h2 {
+		font-size: 0.5rem;
+	}
+
+	.link-item {
+		width: 6rem;
+		font-size: 1rem;
+	}
+}

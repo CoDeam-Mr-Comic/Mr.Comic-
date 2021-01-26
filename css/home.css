@@ -486,4 +486,195 @@ footer h2 {
 	letter-spacing: 0.2rem;
 	color: rgb(151, 161, 170);
 }
+
 /* end of footer */
+
+/* media queries*/
+@media screen and (max-width: 1025px) {
+	.footer-links {
+		width: 15%;
+	}
+
+	.single-card {
+		height: 25rem;
+		font-size: 1.1rem;
+		margin-bottom: 4rem;
+	}
+
+	.btn-vote {
+		font-size: 2.5rem;
+	}
+
+	.btn-vote-full {
+		font-size: 2.5rem;
+	}
+
+	.btn-desc {
+		top: 90.5%;
+		width: 5rem;
+		padding: 0.5rem 0.5rem 1rem;
+		font-size: 1.2rem;
+	}
+
+	.link-item {
+		width: 8rem;
+		font-size: 1.2rem;
+	}
+
+	.link-item-transparent {
+		width: 8rem;
+		font-size: 1.2rem;
+	}
+
+	.header-title {
+		font-size: 1.2rem;
+	}
+}
+
+@media screen and (max-width: 769px) {
+	.footer-links {
+		width: 17%;
+	}
+
+	.footer-links a {
+		font-size: 1.7rem;
+	}
+
+	footer h2 {
+		font-size: 1.1rem;
+	}
+
+	.search {
+		width: 40%;
+	}
+
+	#search {
+		padding: 1rem 1rem;
+		margin: 5rem 0 4rem;
+		border-radius: 1rem;
+		font-size: 0.8rem;
+	}
+
+	#search::placeholder {
+		font-size: 0.8rem;
+	}
+
+	.single-card {
+		height: 18rem;
+		font-size: 0.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.btn-vote {
+		font-size: 2rem;
+	}
+
+	.btn-vote-full {
+		font-size: 2rem;
+	}
+
+	.btn-desc {
+		top: 87%;
+		width: 3.5rem;
+		padding: 0.5rem 0.5rem;
+		font-size: 1rem;
+	}
+
+	.more {
+		width: 9rem;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		font-size: 1rem;
+	}
+
+	.link-item {
+		width: 6rem;
+		font-size: 1rem;
+	}
+
+	.link-item-transparent {
+		width: 6rem;
+		font-size: 1rem;
+	}
+
+	.header-title {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 426px) {
+	footer {
+		height: 80px;
+		padding: 1rem 0;
+	}
+
+	.footer-links {
+		width: 25%;
+	}
+
+	.footer-links a {
+		font-size: 1rem;
+	}
+
+	footer h2 {
+		font-size: 0.5rem;
+	}
+
+	.search {
+		width: 60%;
+	}
+
+	#search {
+		padding: 0.5rem 0;
+		margin: 3rem 0;
+		border-radius: 0.5rem;
+		font-size: 0.8rem;
+	}
+
+	#search::placeholder {
+		font-size: 0.5rem;
+	}
+
+	.single-card {
+		flex: 0 0 70%;
+		height: 20rem;
+		font-size: 0.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.btn-vote {
+		font-size: 2rem;
+	}
+
+	.btn-vote-full {
+		font-size: 2rem;
+	}
+
+	.btn-desc {
+		top: 87%;
+		width: 3.5rem;
+		padding: 0.5rem 0.5rem;
+		font-size: 1rem;
+	}
+
+	.more {
+		width: 5rem;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		font-size: 0.7rem;
+	}
+
+	.link-item {
+		width: 6rem;
+		font-size: 1rem;
+	}
+
+	.link-item-transparent {
+		width: 6rem;
+		font-size: 1rem;
+	}
+
+	.header-title {
+		font-size: 1rem;
+	}
+}
