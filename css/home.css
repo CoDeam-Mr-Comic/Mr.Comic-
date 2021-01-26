@@ -50,7 +50,7 @@ ul {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	background: var(--forthColor);
+	background: orange;
 	display: grid;
 	justify-content: center;
 	align-items: center;
@@ -81,7 +81,7 @@ header::after {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.75);
+	background: rgba(0, 0, 0, 0.39);
 	z-index: -1;
 }
 
@@ -108,6 +108,15 @@ header::after {
 	letter-spacing: 0.15rem;
 }
 
+.color-divider {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: rgb(250, 185, 47);
+	width: 100%;
+	height: 7px;
+}
+
 .nav-white {
 	position: fixed;
 	top: 0;
@@ -117,7 +126,7 @@ header::after {
 	justify-content: center;
 	align-items: center;
 	height: 120px;
-	background-color: var(--secondColor);
+	background-color: rgb(250, 185, 47);
 	transition: var(--mainTransition);
 	box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.64);
 }
@@ -143,16 +152,16 @@ header::after {
 }
 
 .link-item:hover {
-	background-color: var(--thirdColor);
+	background-color: rgb(0, 123, 196);
 	cursor: pointer;
 }
 
 .link-item:hover a {
-	color: var(--secondColor);
+	color: rgb(250, 185, 47);
 }
 
 .link-item a {
-	color: var(--mainColor);
+	color: rgb(0, 123, 196);
 	letter-spacing: 0.2rem;
 }
 
@@ -164,7 +173,7 @@ header::after {
 .logo-container {
 	padding-top: 1rem;
 	width: 10rem;
-	height: 13rem;
+	height: 9rem;
 }
 
 .nav-transparent {
@@ -280,9 +289,9 @@ main {
 	margin: 5rem 0;
 	width: 100%;
 	border-radius: 1rem;
-	border: none;
-	background-color: rgb(179, 177, 177);
-	color: var(--mainColor);
+	border: 2px solid white;
+	background-color: var(--thirdColor);
+	color: var(--darkColor);
 	font-size: 1.2rem;
 	text-align: center;
 	font-weight: bold;
@@ -293,15 +302,14 @@ main {
 	text-transform: capitalize;
 	text-align: center;
 	font-size: 1.2rem;
-	color: var(--thirdColor);
+	color: var(--fifthColor);
 	letter-spacing: 0.2rem;
 	font-weight: normal;
 }
 
 #search:focus {
 	background-color: transparent;
-	color: var(--mainColor);
-	border: 2px solid var(--thirdColor);
+	color: var(--darkColor);
 }
 
 .card-container {
@@ -332,6 +340,7 @@ main {
 	transition: var(--mainTransition);
 	margin-bottom: 5rem;
 	cursor: pointer;
+	border: 5px solid white;
 }
 
 .card-img {
@@ -446,7 +455,7 @@ footer {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: var(--darkColor);
+	background-color: rgb(0, 21, 70);
 	color: var(--secondColor);
 	overflow: hidden;
 	padding: 1.5rem 0;
@@ -456,13 +465,13 @@ footer {
 .footer-links {
 	list-style: none;
 	width: 10%;
-	font-size: 2rem;
 	display: flex;
 	justify-content: space-around;
 	margin-bottom: 1rem;
 }
 
 .footer-links a {
+	font-size: 2rem;
 	color: var(--secondColor);
 	transition: var(--mainTransition);
 }
@@ -472,7 +481,9 @@ footer {
 }
 
 footer h2 {
+	font-size: 1.3rem;
 	text-transform: capitalize;
 	letter-spacing: 0.2rem;
+	color: rgb(151, 161, 170);
 }
 /* end of footer */
