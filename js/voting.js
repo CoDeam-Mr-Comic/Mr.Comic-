@@ -26,7 +26,6 @@ if (localStorage.getItem('superhero')) {
 		}
 	} else {
 		for (let i = 0; i < 5; i++) {
-			console.log(votedhero[i].name);
 			superheroNames.push(votedhero[i].name);
 		}
 	}
