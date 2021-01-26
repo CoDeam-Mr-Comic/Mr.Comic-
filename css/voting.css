@@ -110,14 +110,18 @@ ul {
 	justify-content: center;
 	align-items: center;
 	height: 200px;
+	position: relative;
+	top: 320px;
+	z-index: -1;
 	background-color: rgb(78, 0, 0);
 	transition: var(--mainTransition);
 	box-shadow: 0px 0px 18px 3px rgba(0, 0, 0, 0.64)
+	
 }
 .h-3{
 	text-decoration: none;
 	color: inherit;
-	font-size: 4vmin;
+	font-size: 3vmin;
 }
 .par1{
 	color: rgb(255, 255, 255);
@@ -125,16 +129,19 @@ ul {
 	text-align: center;
 	font-size: 5vmin;
 	text-transform: uppercase;
-	letter-spacing: 5px;
+	letter-spacing: 2px;
 	line-height: 2;
 	background: linear-gradient(90deg, rgb(39, 39, 39), #fff, rgb(78, 0, 0));
 	background-size: 80% 100%;
-	background-repeat:no-repeat;
+	background-repeat:repeat;
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color:transparent;
 	animation: shine 16s linear infinite;
 	font-family: var(--firstFont);
+}
+.par2{
+	
 }
 @keyframes shine {
 	0%{
@@ -150,17 +157,18 @@ ul {
 
 /* //////////////////// body ////////////////////// */
 
-body1{
+body{
 	
 	
 	min-height: 100vh;
-	background: #000;
+	background: rgb(221, 221, 221);
 	
 }
-.glowing{
+/* .glowing{
    position: relative;
    width: 750px;
    height: 750px;
+   z-index: -1;
 }
 .glowing span
 {
@@ -180,7 +188,7 @@ body1{
 	width: 15px;
 	height: 15px;
 	background: #f00;
-	border-radius: 50%;
+	border-radius: 90%;
 
 }
 .glowing span:nth-child(3n + 1):before{
@@ -191,7 +199,7 @@ box-shadow: 0 0 20px rgba(255, 214, 0, 1),
 0 0 80px rgba(255, 214, 0, 1),
 0 0 0 8px rgba(255, 214, 0, .1);
 }
-.glowing span:nth-child(3n + 1):before{
+.glowing span:nth-child(3n + 2):before{
 	background: rgba(134, 255, 0, 1);
 	box-shadow: 0 0 20px rgba(134, 255, 0, 1),
 	0 0 40px rgba(134, 255, 0, 1),
@@ -199,7 +207,7 @@ box-shadow: 0 0 20px rgba(255, 214, 0, 1),
 	0 0 80px rgba(134, 255, 0, 1),
 	0 0 0 8px rgba(134, 255, 0, .1);
 	}
-	.glowing span:nth-child(3n + 1):before{
+	.glowing span:nth-child(3n + 3):before{
 		background: rgba(0, 226, 255, 1);
 		box-shadow: 0 0 20px rgba(0, 226, 255, 1),
 		0 0 40px rgba(0, 226, 255, 1),
@@ -211,15 +219,15 @@ box-shadow: 0 0 20px rgba(255, 214, 0, 1),
 		
 		.glowing span:nth-child(3n + 1)
 		{
-			animation: animate 10s alternate infinite;
+			animation: animate 20s alternate infinite;
 		}
 		.glowing span:nth-child(3n + 2)
 		{
-			animation: animate-reverse 3s alternate infinite;
+			animation: animate-reverse 30s alternate infinite;
 		}
 		.glowing span:nth-child(3n + 3)
 		{
-			animation: animate-reverse 8s alternate infinite;
+			animation: animate-reverse 15s alternate infinite;
 		}
 		@keyframes animate
 		{
@@ -242,7 +250,7 @@ box-shadow: 0 0 20px rgba(255, 214, 0, 1),
 			{
 				transform: rotate(0deg);
 			}
-		}
+		} */
 
 
 
@@ -363,12 +371,15 @@ main {
 #myChart {
 	width: 90%;
 	height: 100%;
+	
+
 }
 
 .week-hero {
 	overflow: hidden;
 	width: 20rem;
 	height: 30rem;
+	
 }
 
 .week-hero img {
