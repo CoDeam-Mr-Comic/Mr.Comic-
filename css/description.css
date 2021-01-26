@@ -137,20 +137,57 @@ main {
 	height: 20rem;
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: center;
 	justify-content: space-evenly;
 	letter-spacing: 0.15rem;
+}
+
+.info-container h2 {
+	font-size: 2rem;
+	font-family: var(--secondFont);
+	margin-bottom: 2rem;
 }
 
 .info-container p {
 	max-width: 40rem;
 	text-align: justify;
 	text-indent: 20px;
+	margin-bottom: 3rem;
+	font-size: 1.2rem;
+	letter-spacing: 0.15rem;
+	text-align-last: center;
 }
 
-.info-container h2 {
-	font-size: 2rem;
-	font-family: var(--secondFont);
+.vote-btn {
+	padding: 1rem 2rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	border: 2px solid var(--thirdColor);
+	background-color: var(--thirdColor);
+	color: var(--secondColor);
+	transition: var(--mainTransition);
+}
+
+.vote-btn:hover {
+	background-color: var(--secondColor);
+	color: var(--thirdColor);
+	cursor: pointer;
+}
+
+.remove-vote-btn {
+	padding: 1rem 2rem;
+	font-size: 1.2rem;
+	font-weight: bold;
+	border: 2px solid var(--thirdColor);
+	background-color: var(--thirdColor);
+	color: var(--secondColor);
+	transition: var(--mainTransition);
+}
+
+.remove-vote-btn:hover {
+	background-color: var(--secondColor);
+	color: var(--thirdColor);
+	cursor: pointer;
 }
 
 /* end of main*/
