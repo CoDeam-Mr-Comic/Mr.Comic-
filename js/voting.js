@@ -20,9 +20,9 @@ if (localStorage.getItem('superhero')) {
 
 	heroOfWeek.innerHTML = `<img src=${votedhero[0].src} alt=${votedhero[0].name}>`;
 
-	votedhero.forEach((hero) => {
-		superheroNames.push(hero.name);
-	});
+	for (let i = 0; i < 5; i++) {
+		superheroNames.push(votedhero[i].name);
+	}
 } else {
 	superhero.forEach((hero) => {
 		superheroNames.push(hero.name);
@@ -38,9 +38,9 @@ if (localStorage.getItem('superhero')) {
 	votedhero.sort((a, b) => {
 		return b.vote - a.vote;
 	});
-	votedhero.forEach((hero) => {
-		superheroVotes.push(hero.vote);
-	});
+	for (let i = 0; i < 5; i++) {
+		superheroVotes.push(votedhero[i].vote);
+	}
 } else {
 	superhero.forEach((hero) => {
 		superheroVotes.push(hero.vote);
@@ -60,28 +60,17 @@ var myChart = new Chart(ctx, {
 		labels: superheroNames,
 		datasets: [
 			{
-				label: '',
+				label: 'votes',
 				data: superheroVotes,
 				backgroundColor: [
-					'var(--darkColor)',
-					'rgba(54, 162, 235, 0.2--darkColor)',
-					'rgba(255, 206, 86, 0.2--darkColor)',
-					'rgba(75, 192, 192, 0.2--darkColor)',
-					'rgba(153, 102, 255, 0.2--darkColor)',
-					'rgba(255, 159, 64, 0.2--darkColor)',
+					'rgb(0, 123, 196)',
+					'rgb(250, 185, 47)',
+					'rgb(0, 21, 70)',
+					'rgb(121, 187, 121)',
+					'rgb(160, 3, 3)',
 				],
-
-				borderColor: [
-					'rgba(255, 99, 132, 1)',
-					'rgba(54, 162, 235, 1)',
-					'rgba(255, 206, 86, 1)',
-					'rgba(75, 192, 192, 1)',
-					'rgba(153, 102, 255, 1)',
-					'rgba(255, 159, 64, 1)',
-				],
-				borderWidth: 2,
-				hoverborderwidth: 3,
-				hoverbordercolor: 'rgba(255, 99, 132, 1)',
+				hoverBorderWidth: 5,
+				hoverBorderColor: ['blue', 'yellow', 'blue', 'green', 'red'],
 			},
 		],
 	},
@@ -111,14 +100,27 @@ var myChart = new Chart(ctx, {
 			xAxes: [
 				{
 					ticks: {
+						display: false,
 						beginAtZero: true,
-						min: 0,
-						stepSize: 1,
+					},
+					gridLines: {
+						color: 'rgba(0, 0, 0, 0)',
+					},
+				},
+			],
+			yAxes: [
+				{
+					barPercentage: 0.6,
+					gridLines: {
+						color: 'rgba(0, 0, 0, 0)',
+					},
+					ticks: {
+						fontSize: 30,
+						padding: 20,
 					},
 				},
 			],
 		},
-
 		animation: {
 			duration: 3000,
 			easing: 'easeInQuint',

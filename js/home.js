@@ -18,6 +18,7 @@ window.addEventListener('load', function () {
 });
 
 //header stuff
+
 const navbar = document.querySelector('.nav-transparent');
 const linkItems = document.querySelectorAll('.link-item-transparent');
 

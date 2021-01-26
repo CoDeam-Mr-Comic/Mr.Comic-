@@ -115,7 +115,7 @@ main {
 }
 
 .content {
-	flex: 0 0 80%;
+	flex: 0 0 70%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -123,27 +123,26 @@ main {
 }
 
 .question-box {
-	flex: 0 0 75%;
+	flex: 0 0 100%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: purple;
+	background-color: rgb(147, 1, 1);
 	border-radius: 2rem;
 }
 
 .question {
-	margin: 5rem 0;
-	font-size: 1.2rem;
+	margin: 3rem 0;
 	letter-spacing: 0.2rem;
 	text-transform: capitalize;
-	max-width: 60%;
+	max-width: 70%;
 	text-align: center;
-	color: var(--darkColor);
+	color: rgb(251, 191, 35);
 }
 
 .answers {
-	width: 60%;
+	width: 100%;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -153,10 +152,11 @@ main {
 .answer-box {
 	position: relative;
 	width: 15rem;
-	height: 20rem;
+	height: 15rem;
 	transition: var(--mainTransition);
 	border-radius: 1rem;
 	overflow: hidden;
+	object-fit: cover;
 }
 
 .answer-box:hover::before {
@@ -183,27 +183,26 @@ main {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, 500%);
+	transform: translate(-50%, -50%);
 	color: var(--secondColor);
-	font-size: 2rem;
+	font-size: 1.5rem;
 	font-weight: bold;
 	letter-spacing: 0.15rem;
 	text-align: center;
-	opacity: 0;
 	transition: var(--mainTransition);
 	text-transform: uppercase;
 	z-index: 9;
+	cursor: pointer;
+	color: rgb(193, 1, 1);
+}
+
+.answer-box:hover .answer {
+	color: rgb(251, 191, 35);
 }
 
 .answer-box:hover img {
 	box-shadow: 0px 2px 16px 3px rgba(0, 0, 0, 0.86);
 	transform: scale(1.1);
-}
-
-.answer-box:hover .answer {
-	transform: translate(-50%, -50%);
-	opacity: 1;
-	cursor: pointer;
 }
 
 .result-container {
@@ -214,8 +213,8 @@ main {
 }
 
 .result {
-	width: 25rem;
-	height: 35rem;
+	width: 20rem;
+	height: 25rem;
 	transition: var(--mainTransition);
 	display: none;
 	border-radius: 2rem;
@@ -230,6 +229,7 @@ main {
 }
 
 .again {
+	margin-top: 1rem;
 	padding: 1rem;
 	text-align: center;
 	animation: showBtn 5s 1;
@@ -237,7 +237,7 @@ main {
 }
 
 .icon {
-	font-size: 3rem;
+	font-size: 2.5rem;
 	color: var(--darkColor);
 }
 
@@ -280,11 +280,12 @@ main {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
 }
 
 .start-btn button {
-	background: rgb(245, 245, 37);
-	color: rgb(34, 199, 182);
+	background: rgb(1, 123, 196);
+	color: #182061;
 	font-size: 25px;
 	font-weight: 650;
 	border: none;
@@ -295,12 +296,14 @@ main {
 }
 
 .start-btn p {
+	width: 80%;
 	font-size: 1.5rem;
 	font-weight: bold;
 	letter-spacing: 0.15rem;
 	text-align: center;
 	margin-bottom: 2rem;
 	text-transform: capitalize;
+	color: #182061;
 }
 
 @keyframes lighting {
@@ -356,3 +359,140 @@ footer h2 {
 }
 
 /* end of footer */
+
+/* media queries*/
+@media screen and (max-width: 1025px) {
+	.footer-links {
+		width: 15%;
+	}
+
+	.single-card {
+		height: 25rem;
+		font-size: 1.1rem;
+		margin-bottom: 4rem;
+	}
+
+	.btn-vote {
+		font-size: 2.5rem;
+	}
+
+	.btn-vote-full {
+		font-size: 2.5rem;
+	}
+
+	.btn-desc {
+		top: 90.5%;
+		width: 5rem;
+		padding: 0.5rem 0.5rem 1rem;
+		font-size: 1.2rem;
+	}
+
+	.link-item {
+		width: 8rem;
+		font-size: 1.2rem;
+	}
+
+	.link-item-transparent {
+		width: 8rem;
+		font-size: 1.2rem;
+	}
+
+	.header-title {
+		font-size: 1.2rem;
+	}
+}
+
+@media screen and (max-width: 769px) {
+	.footer-links {
+		width: 17%;
+	}
+
+	.footer-links a {
+		font-size: 1.7rem;
+	}
+
+	footer h2 {
+		font-size: 1.1rem;
+	}
+
+	.search {
+		width: 40%;
+	}
+
+	#search {
+		padding: 1rem 1rem;
+		margin: 5rem 0 4rem;
+		border-radius: 1rem;
+		font-size: 0.8rem;
+	}
+
+	#search::placeholder {
+		font-size: 0.8rem;
+	}
+
+	.single-card {
+		height: 18rem;
+		font-size: 0.5rem;
+		margin-bottom: 3rem;
+	}
+
+	.btn-vote {
+		font-size: 2rem;
+	}
+
+	.btn-vote-full {
+		font-size: 2rem;
+	}
+
+	.btn-desc {
+		top: 87%;
+		width: 3.5rem;
+		padding: 0.5rem 0.5rem;
+		font-size: 1rem;
+	}
+
+	.more {
+		width: 9rem;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		font-size: 1rem;
+	}
+
+	.link-item {
+		width: 6rem;
+		font-size: 1rem;
+	}
+
+	.link-item-transparent {
+		width: 6rem;
+		font-size: 1rem;
+	}
+
+	.header-title {
+		font-size: 1rem;
+	}
+}
+
+@media screen and (max-width: 426px) {
+	footer {
+		height: 80px;
+		padding: 1rem 0;
+	}
+
+	.footer-links {
+		width: 25%;
+	}
+
+	.footer-links a {
+		font-size: 1rem;
+	}
+
+	footer h2 {
+		font-size: 0.5rem;
+	}
+
+	.link-item {
+		width: 6rem;
+		font-size: 1rem;
+	}
+}
