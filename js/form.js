@@ -11,3 +11,4 @@ showBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
 	form.classList.add('hide');
 });
+
