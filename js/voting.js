@@ -17,11 +17,18 @@ if (localStorage.getItem('superhero')) {
 	votedhero.sort((a, b) => {
 		return b.vote - a.vote;
 	});
+	heroOfWeek.innerHTML = `<img src=${votedhero[0].src} alt=${votedhero[0].name} title=${votedhero[0].name}> `;
 
-	heroOfWeek.innerHTML = `<img src=${votedhero[0].src} alt=${votedhero[0].name}>`;
-
-	for (let i = 0; i < 5; i++) {
-		superheroNames.push(votedhero[i].name);
+	if (votedhero.length < 5) {
+		for (let i = 0; i < votedhero.length; i++) {
+			console.log(votedhero[i].name);
+			superheroNames.push(votedhero[i].name);
+		}
+	} else {
+		for (let i = 0; i < 5; i++) {
+			console.log(votedhero[i].name);
+			superheroNames.push(votedhero[i].name);
+		}
 	}
 } else {
 	superhero.forEach((hero) => {
@@ -38,8 +45,15 @@ if (localStorage.getItem('superhero')) {
 	votedhero.sort((a, b) => {
 		return b.vote - a.vote;
 	});
-	for (let i = 0; i < 5; i++) {
-		superheroVotes.push(votedhero[i].vote);
+
+	if (votedhero.length < 5) {
+		for (let i = 0; i < votedhero.length; i++) {
+			superheroVotes.push(votedhero[i].vote);
+		}
+	} else {
+		for (let i = 0; i < 5; i++) {
+			superheroVotes.push(votedhero[i].vote);
+		}
 	}
 } else {
 	superhero.forEach((hero) => {
