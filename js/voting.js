@@ -7,6 +7,8 @@ let superheroNames = [];
 let superheroVotes = [];
 
 const heroOfWeek = document.querySelector('.week-hero');
+const mystery = document.querySelector('.mystery');
+var chart = document.querySelector('.size-chart');
 
 if (localStorage.getItem('superhero')) {
 	const votedhero = JSON.parse(localStorage.getItem('superhero')).filter(
@@ -17,11 +19,9 @@ if (localStorage.getItem('superhero')) {
 	votedhero.sort((a, b) => {
 		return b.vote - a.vote;
 	});
-	heroOfWeek.innerHTML = `<img src=${votedhero[0].src} alt=${votedhero[0].name} title=${votedhero[0].name}> `;
 
 	if (votedhero.length < 5) {
 		for (let i = 0; i < votedhero.length; i++) {
-			console.log(votedhero[i].name);
 			superheroNames.push(votedhero[i].name);
 		}
 	} else {
@@ -29,6 +29,16 @@ if (localStorage.getItem('superhero')) {
 			superheroNames.push(votedhero[i].name);
 		}
 	}
+
+	if (superheroNames.length === 0) {
+		mystery.innerHTML = `<img src='utilityImg/mystery.jpg' alt='mystery'> `;
+		chart.classList.add('hide');
+	} else {
+		heroOfWeek.innerHTML = `<img src=${votedhero[0].src} alt=${votedhero[0].name} title=${votedhero[0].name}> `;
+		chart.classList.remove('hide');
+		mystery.classList.add('hide');
+	}
+
 } else {
 	superhero.forEach((hero) => {
 		superheroNames.push(hero.name);

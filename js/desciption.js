@@ -95,24 +95,20 @@ window.addEventListener('DOMContentLoaded', () => {
 			modal.innerHTML = `<img class='modal-img' src=${choosenhero.pics[index]} alt=${choosenhero.name}>`;
 			left.addEventListener('click', (e) => {
 				e.preventDefault();
-				if (index === 0) {
-					modal.innerHTML = `<img class='modal-img' src=${choosenhero.pics[index]} alt=${choosenhero.name}>`;
+				index--;
+				if (index < 0) {
 					index = 3;
-				} else {
-					modal.innerHTML = `<img class='modal-img' src=${choosenhero.pics[index]} alt=${choosenhero.name}>`;
-					index--;
 				}
+				modal.innerHTML = `<img class='modal-img' src=${choosenhero.pics[index]} alt=${choosenhero.name}>`;
 			});
 
 			right.addEventListener('click', (e) => {
 				e.preventDefault();
-				if (index === 3) {
-					modal.innerHTML = `<img class='modal-img' src=${choosenhero.pics[index]} alt=${choosenhero.name}>`;
+				index++;
+				if (index > 3) {
 					index = 0;
-				} else {
-					modal.innerHTML = `<img class='modal-img' src=${choosenhero.pics[index]} alt=${choosenhero.name}>`;
-					index++;
 				}
+				modal.innerHTML = `<img class='modal-img' src=${choosenhero.pics[index]} alt=${choosenhero.name}>`;
 			});
 		});
 	});
