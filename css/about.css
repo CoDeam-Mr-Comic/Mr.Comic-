@@ -127,7 +127,7 @@ main {
 
 .side h2 {
 	letter-spacing: 0.5rem;
-	color: rgb(250, 185, 47);
+	color: rgb(196, 1, 1);
 }
 
 .container {
@@ -142,11 +142,12 @@ main {
 
 .profile {
 	flex: 0 0 27%;
-	border: 4px solid rgb(25, 33, 98);
+	border: 1px solid rgb(25, 33, 98);
 	text-align: center;
 	margin-bottom: 3rem;
 	padding: 1rem 0.5rem;
 	height: 50%;
+	background-color: var(--secondColor);
 }
 
 .profileimg {
