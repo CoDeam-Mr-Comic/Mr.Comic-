@@ -222,8 +222,8 @@ main {
 
 .mystery {
 	overflow: hidden;
-	width: 20rem;
-	height: 30rem;
+	width: 30rem;
+	height: 25rem;
 	position: absolute;
 	top: 0.1%;
 }
@@ -269,7 +269,7 @@ footer {
 }
 
 footer h2 {
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 	text-transform: capitalize;
 	letter-spacing: 0.2rem;
 	color: rgb(151, 161, 170);

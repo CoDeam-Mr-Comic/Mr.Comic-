@@ -127,7 +127,7 @@ main {
 
 .side h2 {
 	letter-spacing: 0.5rem;
-	color:rgb(250, 185, 47);
+	color: rgb(250, 185, 47);
 }
 
 .container {
@@ -222,7 +222,7 @@ footer {
 }
 
 footer h2 {
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 	text-transform: capitalize;
 	letter-spacing: 0.2rem;
 	color: rgb(151, 161, 170);
