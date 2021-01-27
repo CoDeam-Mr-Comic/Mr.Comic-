@@ -9,6 +9,13 @@ let superheroVotes = [];
 const heroOfWeek = document.querySelector('.week-hero');
 const mystery = document.querySelector('.mystery');
 var chart = document.querySelector('.size-chart');
+const navbar = document.querySelector('.nav-white');
+const linkItemsAchor = document.querySelectorAll('.link-item a');
+const footer = document.querySelector('footer');
+const footerLinks = document.querySelectorAll('.footer-link a');
+const copy = document.querySelector('footer h2');
+
+window.addEventListener('DOMContentLoaded', () => {});
 
 if (localStorage.getItem('superhero')) {
 	const votedhero = JSON.parse(localStorage.getItem('superhero')).filter(
@@ -19,6 +26,19 @@ if (localStorage.getItem('superhero')) {
 	votedhero.sort((a, b) => {
 		return b.vote - a.vote;
 	});
+
+	if (votedhero.length !== 0) {
+		navbar.style.backgroundColor = votedhero[0].color[0];
+		linkItemsAchor.forEach((linkItem) => {
+			linkItem.style.color = votedhero[0].color[1];
+		});
+
+		footer.style.backgroundColor = votedhero[0].color[0];
+		footerLinks.forEach((footerLink) => {
+			footerLink.style.color = votedhero[0].color[1];
+		});
+		copy.style.color = votedhero[0].color[2];
+	}
 
 	if (votedhero.length < 5) {
 		for (let i = 0; i < votedhero.length; i++) {
