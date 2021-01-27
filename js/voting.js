@@ -31,14 +31,13 @@ if (localStorage.getItem('superhero')) {
 	}
 
 	if (superheroNames.length === 0) {
-		mystery.innerHTML = `<img src='utilityImg/mystery.jpg' alt='mystery'> `;
+		mystery.innerHTML = `<img src='utilityImg/mystery.png' alt='mystery'> `;
 		chart.classList.add('hide');
 	} else {
 		heroOfWeek.innerHTML = `<img src=${votedhero[0].src} alt=${votedhero[0].name} title=${votedhero[0].name}> `;
 		chart.classList.remove('hide');
 		mystery.classList.add('hide');
 	}
-
 } else {
 	superhero.forEach((hero) => {
 		superheroNames.push(hero.name);
