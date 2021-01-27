@@ -89,6 +89,7 @@ form.addEventListener('keyup', (e) => {
 				const targetHero = favorite.find((hero) => {
 					return hero.name === element;
 				});
+
 				const index = choosenHero.indexOf(targetHero);
 
 				const modifiedHero = { ...targetHero };
@@ -117,6 +118,7 @@ form.addEventListener('keyup', (e) => {
 					const modifiedHero = { ...targetHero };
 					modifiedHero.vote--;
 					favorite.splice(favorite.indexOf(targetHero), 1, modifiedHero);
+					choosenHero.splice(choosenHero.indexOf(targetHero), 1, modifiedHero);
 				}
 
 				if (btn.dataset.id == element) {
