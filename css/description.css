@@ -200,6 +200,11 @@ main {
 	width: 12rem;
 	height: 15rem;
 	cursor: pointer;
+	position: relative;
+}
+
+.gallary-img:hover {
+	opacity: 0.7;
 }
 
 .modal {

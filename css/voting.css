@@ -20,11 +20,18 @@
 
 html {
 	scroll-behavior: smooth;
+	height: 100%;
+	width: 100%;
 }
 
 body {
 	font-family: var(--firstFont);
 	background-color: var(--fifthColor);
+	height: 100%;
+	width: 100%;
+	display: table;
+	table-layout: fixed;
+	margin: 0 auto;
 }
 
 a {
@@ -44,6 +51,10 @@ ul {
 }
 
 /* header */
+header {
+	display: table-row;
+}
+
 .nav-white {
 	width: 100%;
 	display: flex;
@@ -102,6 +113,8 @@ ul {
 
 /* ///////////////////header shine/////////////////////// */
 main {
+	display: table-row;
+	height: 100%;
 	position: relative;
 }
 
@@ -176,7 +189,7 @@ main {
 
 /* end of header*/
 main {
-	margin: 5rem 0;
+	margin-top: 2rem;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -207,10 +220,25 @@ main {
 	margin: 0 auto;
 }
 
+.mystery {
+	overflow: hidden;
+	width: 20rem;
+	height: 30rem;
+	position: absolute;
+	top: 0.1%;
+}
+
+.mystery img {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+}
+
 /* /////////////////////////////////// */
 
 /* footer */
 footer {
+	display: table-row;
 	height: 130px;
 	width: 100%;
 	display: flex;
